@@ -33,14 +33,7 @@ header{padding:64px 0 40px;border-bottom:1px solid var(--hair)}
 .mast-dates{font-size:clamp(13px,2vw,15px);color:var(--muted);font-variant-numeric:tabular-nums}
 h1.mega{display:flex;align-items:center;gap:.045em;font-size:clamp(68px,16.5vw,148px);font-weight:800;letter-spacing:-0.04em;line-height:.9}
 .ring{width:.7em;height:.7em;border:.115em solid var(--ink);border-radius:50%;flex-shrink:0}
-.daybar{display:flex;gap:7px;margin-top:30px}
-.daybar a{flex:1;min-width:0;text-decoration:none;color:var(--ink)}
-.daybar i{display:block;height:9px;border-radius:4.5px}
-.daybar b{display:block;font-size:12.5px;font-weight:800;margin-top:8px;font-variant-numeric:tabular-nums}
-.daybar span{display:block;font-size:11.5px;color:var(--muted);line-height:1.4;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
-.daybar a:hover b{text-decoration:underline;text-underline-offset:3px}
-.daybar a:focus-visible{outline:2px solid var(--ink);outline-offset:3px;border-radius:4px}
-@media(max-width:560px){.daybar span{display:none}}
+.route-strip.hero{max-width:none;height:9px;margin:28px 0 0}
 .header-meta{margin-top:22px;font-size:15px;color:var(--muted);max-width:56ch}
 .header-meta strong{color:var(--ink);font-weight:600}
 
@@ -180,12 +173,10 @@ footer .route-strip{margin-bottom:16px}
       <span class="mast-dates">2026. 9. 29 화 – 10. 2 금</span>
     </div>
     <h1 class="mega" aria-label="TOKYO">T<span class="ring" aria-hidden="true"></span>KY<span class="ring" aria-hidden="true"></span></h1>
-    <nav class="daybar" aria-label="날짜 바로가기">
-      <a href="#d1"><i style="background:var(--d1)"></i><b>9/29</b><span>긴자</span></a>
-      <a href="#d2"><i style="background:var(--d2)"></i><b>9/30</b><span>아자부다이 · 무사시노</span></a>
-      <a href="#d3"><i style="background:var(--d3)"></i><b>10/1</b><span>타카나와 · 아오야마 · 시부야</span></a>
-      <a href="#d4"><i style="background:var(--d4)"></i><b>10/2</b><span>롯폰기 · 도쿄역</span></a>
-    </nav>
+    <div class="route-strip hero" aria-hidden="true">
+      <span style="background:var(--d1)"></span><span style="background:var(--d2)"></span>
+      <span style="background:var(--d3)"></span><span style="background:var(--d4)"></span>
+    </div>
     <p class="header-meta">
       매일 하나의 지역을 축으로 움직이고, 오후에는 관심사에 따라 트랙을 골라 흩어졌다가 저녁에 다시 모입니다.
       아래 각 날짜의 세로 선은 그날의 실제 이동 축이 되는 노선 색입니다.
@@ -626,8 +617,10 @@ footer .route-strip{margin-bottom:16px}
       <div class="stop-time">15:00</div>
       <div class="stop-name">KITTE — <a class="pl" href="https://www.intermediatheque.jp/" target="_blank" rel="noopener">인터메디아테크</a></div>
       <p class="stop-desc">옛 도쿄중앙우체국을 리노베이션한 JP타워 2·3층. 도쿄대 학술표본을 박물관 그래픽과 집기 디자인으로 다시 짠 무료 상설관. 표본 진열장 하나하나가 전시디자인 레퍼런스. <a class="wl" href="https://www.intermediatheque.jp/" target="_blank" rel="noopener">intermediatheque.jp</a></p>
-      <figure class="fig"><img src="image/inter.jpg" alt="인터메디아테크" loading="lazy" onerror="this.closest('figure').style.display='none'">
-      <figcaption>인터메디아테크</figcaption></figure>
+      <figure class="fig">
+      <img src="image/kitte.jpg" alt="KITTE 아트리움" loading="lazy" onerror="this.remove()">
+      <img src="image/inter.jpg" alt="인터메디아테크" loading="lazy" onerror="this.remove()">
+      <figcaption>KITTE 아트리움과 인터메디아테크</figcaption></figure>
     </div>
     <div class="go"><span class="badges"><span class="bd m">M</span><span class="bd h">H</span></span>
       <span>16:00 도쿄역 → 마루노우치선 → 가스미가세키(같은 승강장급 환승) → 히비야선 → 롯폰기. 약 25분. 16:30 호텔에서 짐 찾기.</span></div>
