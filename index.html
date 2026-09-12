@@ -28,10 +28,19 @@ body{
 header{padding:64px 0 40px;border-bottom:1px solid var(--hair)}
 .route-strip{display:flex;height:6px;border-radius:3px;overflow:hidden;margin-bottom:28px;max-width:320px}
 .route-strip span{flex:1}
-.kicker{font-size:clamp(16px,2.6vw,21px);font-weight:700;letter-spacing:.01em;margin-bottom:4px}
-h1.mega{font-size:clamp(64px,15vw,130px);font-weight:800;letter-spacing:-0.045em;line-height:.95}
-.route-strip.hero{max-width:none;height:9px;margin:24px 0 16px}
-.dates{font-size:15px;color:var(--muted)}
+.mast-top{display:flex;justify-content:space-between;align-items:baseline;gap:16px;flex-wrap:wrap;margin-bottom:18px}
+.kicker{font-size:clamp(15px,2.4vw,19px);font-weight:700;letter-spacing:.01em}
+.mast-dates{font-size:clamp(13px,2vw,15px);color:var(--muted);font-variant-numeric:tabular-nums}
+h1.mega{display:flex;align-items:center;gap:.045em;font-size:clamp(68px,16.5vw,148px);font-weight:800;letter-spacing:-0.04em;line-height:.9}
+.ring{width:.7em;height:.7em;border:.115em solid var(--ink);border-radius:50%;flex-shrink:0}
+.daybar{display:flex;gap:7px;margin-top:30px}
+.daybar a{flex:1;min-width:0;text-decoration:none;color:var(--ink)}
+.daybar i{display:block;height:9px;border-radius:4.5px}
+.daybar b{display:block;font-size:12.5px;font-weight:800;margin-top:8px;font-variant-numeric:tabular-nums}
+.daybar span{display:block;font-size:11.5px;color:var(--muted);line-height:1.4;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.daybar a:hover b{text-decoration:underline;text-underline-offset:3px}
+.daybar a:focus-visible{outline:2px solid var(--ink);outline-offset:3px;border-radius:4px}
+@media(max-width:560px){.daybar span{display:none}}
 .header-meta{margin-top:22px;font-size:15px;color:var(--muted);max-width:56ch}
 .header-meta strong{color:var(--ink);font-weight:600}
 
@@ -166,13 +175,17 @@ footer .route-strip{margin-bottom:16px}
 
 <header>
   <div class="wrap">
-    <p class="kicker">SADI Inspiration Tour</p>
-    <h1 class="mega">TOKYO</h1>
-    <div class="route-strip hero" aria-hidden="true">
-      <span style="background:var(--d1)"></span><span style="background:var(--d2)"></span>
-      <span style="background:var(--d3)"></span><span style="background:var(--d4)"></span>
+    <div class="mast-top">
+      <span class="kicker">SADI Inspiration Tour</span>
+      <span class="mast-dates">2026. 9. 29 화 – 10. 2 금</span>
     </div>
-    <p class="dates">2026. 9. 29 화 – 10. 2 금 · 3박 4일 · 디자인 답사</p>
+    <h1 class="mega" aria-label="TOKYO">T<span class="ring" aria-hidden="true"></span>KY<span class="ring" aria-hidden="true"></span></h1>
+    <nav class="daybar" aria-label="날짜 바로가기">
+      <a href="#d1"><i style="background:var(--d1)"></i><b>9/29</b><span>긴자</span></a>
+      <a href="#d2"><i style="background:var(--d2)"></i><b>9/30</b><span>아자부다이 · 무사시노</span></a>
+      <a href="#d3"><i style="background:var(--d3)"></i><b>10/1</b><span>타카나와 · 아오야마 · 시부야</span></a>
+      <a href="#d4"><i style="background:var(--d4)"></i><b>10/2</b><span>롯폰기 · 도쿄역</span></a>
+    </nav>
     <p class="header-meta">
       매일 하나의 지역을 축으로 움직이고, 오후에는 관심사에 따라 트랙을 골라 흩어졌다가 저녁에 다시 모입니다.
       아래 각 날짜의 세로 선은 그날의 실제 이동 축이 되는 노선 색입니다.
@@ -483,8 +496,6 @@ footer .route-strip{margin-bottom:16px}
       <div class="stop-time">14:00 – 17:30</div>
       <div class="stop-name">오후 자유 트랙 — 4갈래</div>
       <p class="stop-desc">시부야 히카리에 8층 d47 뮤지엄(18:30 기준)에서 다시 만나는 것으로 잡고, 각 트랙에서 역산해 움직입니다.</p>
-      <figure class="fig"><img src="image/nezu.png" alt="네즈미술관 진입로" loading="lazy" onerror="this.closest('figure').style.display='none'">
-      <figcaption>네즈미술관 — 구마 겐고. 대나무 진입로를 걷는 동안 도시의 소리가 빠져나가게 설계된 전이 공간.</figcaption></figure>
       <div class="track-grid" style="margin-top:14px">
         <div class="track">
           <h4>A. 네즈미술관 — 미술관·정원</h4>
@@ -492,6 +503,7 @@ footer .route-strip{margin-bottom:16px}
           <ul>
             <li><a class="pl" href="https://www.nezu-muse.or.jp/" target="_blank" rel="noopener">네즈미술관</a> <span>— 구마 겐고 설계. 대나무 진입로, 낮은 조도의 전시실, 도심에 숨겨진 정원까지. 제대로 보면 2–3시간이 걸려 독립 트랙으로 분리. <b>온라인 날짜·시간 지정 예약제</b>(14:00–15:00 슬롯 권장, 변경·취소 불가, 입관 후엔 시간 제한 없음). 학생 요금(대학생 700엔~)은 학생증 필수</span> <a class="wl" href="https://www.nezu-muse.or.jp/" target="_blank" rel="noopener">nezu-muse.or.jp</a></li>
           </ul>
+          <figure class="fig" style="margin:10px 0 2px"><img src="image/nezu.png" alt="네즈미술관 진입로" loading="lazy" onerror="this.closest('figure').style.display='none'"></figure>
           <div class="route"><span class="badges"><span class="bd e">E</span><span class="bd g">G</span></span>
             <span>다이몬 → 오에도선 → 아오야마잇초메 → 긴자선 → 오모테산도 도보 8분, 약 40분. 시부야 집합은 긴자선 1정거장</span></div>
         </div>
@@ -504,6 +516,7 @@ footer .route-strip{margin-bottom:16px}
             <li>16:00 <a class="pl" href="https://archivestore.jp/" target="_blank" rel="noopener">아카이브 스토어</a> <span>— 빈티지 의류 아카이브</span> <a class="wl" href="https://archivestore.jp/" target="_blank" rel="noopener">archivestore.jp</a></li>
             <li>17:00 <a class="pl" href="https://papierlabo.com/" target="_blank" rel="noopener">파피에 라보</a> <span>— 활판인쇄·종이 전문(진구마에 1초메, 하라주쿠역 북쪽. ~19시, 월·화 휴무)</span> <a class="wl" href="https://papierlabo.com/" target="_blank" rel="noopener">papierlabo.com</a></li>
           </ul>
+          <figure class="fig" style="margin:10px 0 2px"><img src="image/archive.png" alt="아카이브 스토어" loading="lazy" onerror="this.closest('figure').style.display='none'"></figure>
           <div class="route"><span class="badges"><span class="bd e">E</span><span class="bd g">G</span><span class="bd jr">JR</span></span>
             <span>A트랙과 같은 경로로 오모테산도까지, 이후 도보 순회(동→서→북 스윕이라 되돌아가는 구간 없음). 시부야 집합은 파피에 라보 → 도보 8분 하라주쿠 → JR 1정거장, 약 15분</span></div>
         </div>
@@ -525,6 +538,7 @@ footer .route-strip{margin-bottom:16px}
             <li><a class="pl" href="https://www.karimoku.com/" target="_blank" rel="noopener">카리모쿠 리서치 센터</a> <span>— 목가구 브랜드의 리서치 전용 공간</span> <a class="wl" href="https://www.karimoku.com/" target="_blank" rel="noopener">karimoku.com</a></li>
             <li><a class="pl" href="https://hidasangyo.com/" target="_blank" rel="noopener">HIDA 도쿄 미드타운점</a> <span>— 히다 지역 목공 가구</span> <a class="wl" href="https://hidasangyo.com/" target="_blank" rel="noopener">hidasangyo.com</a></li>
           </ul>
+          <figure class="fig" style="margin:10px 0 2px"><img src="image/ma.jpg" alt="갤러리·마" loading="lazy" onerror="this.closest('figure').style.display='none'"></figure>
           <div class="route"><span class="badges"><span class="bd e">E</span><span class="bd c">C</span></span>
             <span>다이몬 → 오에도선 → 아오야마잇초메 → 도보 10분(또는 치요다선 노기자카). 시부야 집합은 노기자카 → 치요다선 → 오모테산도 → 긴자선 1정거장, 약 20분</span></div>
         </div>
