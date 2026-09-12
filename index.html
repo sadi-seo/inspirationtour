@@ -89,6 +89,10 @@ section.day{padding:56px 0 24px}
 .bd.bus{background:#555550}.bd.walk{background:#fff;color:var(--ink);border:1.5px solid var(--ink)}
 .bd.taxi{background:#26221e}
 
+/* ---------- track labels (inline sections) ---------- */
+.track-label{display:flex;align-items:center;gap:8px;font-size:15.5px;font-weight:800;margin:22px 0 4px}
+.track-label i{width:10px;height:10px;border-radius:50%;background:var(--lc);flex-shrink:0}
+
 /* ---------- ginza walk list ---------- */
 .walk{list-style:none;margin-top:14px;max-width:58ch}
 .walk li{display:flex;gap:12px;padding:12px 0;border-bottom:1px dashed var(--hair)}
@@ -324,12 +328,13 @@ footer .route-strip{margin-bottom:16px}
       <div class="stop-name">점심 — 츠지한 (롯폰기)</div>
       <p class="stop-desc">카이센동 한 그릇에 줄 서는 집. 웨이팅이 길면 도쿄 미드타운 식당가로 대체.</p>
     </div>
-    <div class="go"><span class="badges"><span class="bd h">H</span></span>
-      <span>롯폰기 → 히비야선 → 긴자. 환승 없이 약 15분. 이 히비야선 직통이 이번 숙소 위치의 가장 큰 장점입니다.</span></div>
+    <div class="go"><span class="badges"><span class="bd h">H</span><span class="bd e">E</span></span>
+      <span>A트랙은 롯폰기 → 히비야선 → 긴자, 환승 없이 약 15분 — 이 직통이 숙소 위치의 가장 큰 장점입니다. B트랙은 롯폰기 → 오에도선 → 다이몬, 약 8분.</span></div>
 
     <div class="stop">
       <div class="stop-time">15:00 –</div>
-      <div class="stop-name">긴자 자유 트랙</div>
+      <div class="stop-name">오후 자유 트랙 — 2갈래</div>
+      <p class="track-label"><i></i>A. 긴자 자유 트랙</p>
       <p class="stop-desc">긴자 1초메에서 남쪽으로 내려오는 도보 코스로 순서를 잡았습니다. 가까운 곳끼리 묶으면서 마감 시간과도 맞아떨어지는 순서 — 입장 마감이 가장 빠른 폴라(18:30)에서 시작해 가장 늦게 닫는 츠타야(21:00)에서 끝납니다. 관심 없는 곳은 건너뛰어도 동선은 그대로 유지됩니다.</p>
       <figure class="fig"><img src="https://commons.wikimedia.org/wiki/Special:FilePath/Ginza_Sony_Park.jpg?width=1000" alt="긴자 소니 파크 외관" loading="lazy" onerror="this.closest('figure').style.display='none'">
       <figcaption>긴자 소니 파크 — 옛 소니빌딩을 헐고 ‘수직 공원’으로 다시 지은 건물. 사진: Wikimedia Commons</figcaption></figure>
@@ -359,7 +364,8 @@ footer .route-strip{margin-bottom:16px}
           <p>6층 아트북 서점. 대형 서가와 아트 큐레이션. 마지막 코스라 시간에 쫓기지 않고 볼 수 있습니다. <a class="wl" href="https://store.tsite.jp/ginza/" target="_blank" rel="noopener">store.tsite.jp/ginza</a></p>
         </div></li>
       </ol>
-      <p class="stop-desc" style="margin-top:12px">개인 옵션: 가구 관심 학생은 긴자에 앞서 <a class="pl" href="https://www.tendo-mokko.co.jp/" target="_blank" rel="noopener">텐도목코 쇼룸</a>(하마마쓰초, 오에도선 다이몬 도보 3분, 예약제·17:00까지) 을 들렀다가 16시대에 긴자로 합류할 수 있습니다. 야나기 소리 버터플라이 스툴을 만든 성형합판 가구의 본가로, 화요일 정상 영업. <a class="wl" href="https://www.tendo-mokko.co.jp/" target="_blank" rel="noopener">tendo-mokko.co.jp</a></p>
+      <p class="track-label"><i></i>B. 텐도목코 트랙</p>
+      <p class="stop-desc"><a class="pl" href="https://www.tendo-mokko.co.jp/" target="_blank" rel="noopener">텐도목코 쇼룸</a>(하마마쓰초) — 야나기 소리 버터플라이 스툴을 만든 성형합판 가구의 본가. 견학 예약제, 17:00까지, 화요일 정상 영업. 다이몬역에서 도보 3분이라 숙소에서 가장 빨리 닿는 트랙입니다. 관람 후 아사쿠사선 다이몬 → 히가시긴자 약 8분으로 이동해 16시대에 A트랙 코스에 합류 — 마감이 늦은 곳들(이토야·DSM·츠타야)은 그때부터도 충분히 돌 수 있습니다. <a class="wl" href="https://www.tendo-mokko.co.jp/" target="_blank" rel="noopener">tendo-mokko.co.jp</a></p>
     </div>
 
     <div class="stop">
