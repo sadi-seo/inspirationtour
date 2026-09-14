@@ -1,0 +1,782 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SADI Inspiration Tour — TOKYO</title>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css">
+<style>
+:root{
+  --paper:#fafaf8; --ink:#1c1c1a; --muted:#6d6d66; --hair:#e5e5de; --card:#ffffff;
+  --d1:#ff9500;  /* 긴자선 */
+  --d2:#b6007a;  /* 오에도선 */
+  --d3:#00bb85;  /* 치요다선 */
+  --d4:#f62e36;  /* 마루노우치선 */
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+body{
+  font-family:"Pretendard Variable",Pretendard,-apple-system,"Apple SD Gothic Neo","Noto Sans KR",sans-serif;
+  background:var(--paper); color:var(--ink);
+  font-size:16px; line-height:1.65;
+  -webkit-font-smoothing:antialiased;
+}
+.wrap{max-width:760px;margin:0 auto;padding:0 20px}
+
+/* ---------- header ---------- */
+header{padding:64px 0 40px;border-bottom:1px solid var(--hair)}
+.route-strip{display:flex;height:6px;border-radius:3px;overflow:hidden;margin-bottom:28px;max-width:320px}
+.route-strip span{flex:1}
+.mast-top{display:flex;justify-content:space-between;align-items:baseline;gap:16px;flex-wrap:wrap;margin-bottom:18px}
+.kicker{font-size:clamp(15px,2.4vw,19px);font-weight:700;letter-spacing:.01em}
+.mast-dates{font-size:clamp(13px,2vw,15px);color:var(--muted);font-variant-numeric:tabular-nums}
+h1.mega{display:flex;align-items:center;gap:.045em;font-size:clamp(68px,16.5vw,148px);font-weight:800;letter-spacing:-0.04em;line-height:.9}
+.ring{width:.7em;height:.7em;border:.115em solid var(--ink);border-radius:50%;flex-shrink:0}
+.route-strip.hero{max-width:none;height:9px;margin:28px 0 0}
+.header-meta{margin-top:22px;font-size:15px;color:var(--muted);max-width:56ch}
+.header-meta strong{color:var(--ink);font-weight:600}
+
+/* ---------- day nav ---------- */
+nav{position:sticky;top:0;z-index:50;background:rgba(250,250,248,.92);backdrop-filter:blur(8px);border-bottom:1px solid var(--hair)}
+nav .wrap{display:flex;gap:8px;padding-top:10px;padding-bottom:10px;overflow-x:auto}
+nav a{
+  flex-shrink:0;display:flex;align-items:center;gap:8px;
+  text-decoration:none;color:var(--ink);font-size:14px;font-weight:600;
+  padding:7px 14px;border:1px solid var(--hair);border-radius:999px;background:var(--card);
+}
+nav a b{display:inline-block;width:10px;height:10px;border-radius:50%}
+nav a:hover{border-color:var(--ink)}
+nav a:focus-visible{outline:2px solid var(--ink);outline-offset:2px}
+
+/* ---------- day section ---------- */
+section.day{padding:56px 0 24px}
+.day-head{display:flex;align-items:baseline;gap:14px;flex-wrap:wrap;margin-bottom:8px}
+.day-num{font-size:15px;font-weight:800;color:#fff;padding:3px 12px;border-radius:999px}
+.day-head h2{font-size:clamp(24px,4.5vw,32px);font-weight:800;letter-spacing:-0.02em}
+.day-sub{font-size:15px;color:var(--muted);margin-bottom:30px;max-width:60ch}
+
+/* ---------- timeline (metro line) ---------- */
+.line{position:relative;padding-left:34px}
+.line::before{content:"";position:absolute;left:9px;top:6px;bottom:6px;width:6px;border-radius:3px;background:var(--lc)}
+.stop{position:relative;padding-bottom:26px}
+.stop::before{
+  content:"";position:absolute;left:-31px;top:6px;width:14px;height:14px;border-radius:50%;
+  background:#fff;border:4px solid var(--lc);
+}
+.stop-time{font-size:13px;font-weight:700;color:var(--muted);font-variant-numeric:tabular-nums;letter-spacing:.02em}
+.stop-name{font-size:18px;font-weight:700;letter-spacing:-0.01em;margin:1px 0 2px}
+.stop-desc{font-size:14.5px;color:var(--muted);max-width:58ch}
+.stop-desc b{color:var(--ink);font-weight:600}
+
+/* exhibition note inside a stop */
+.exh{margin-top:10px;border-left:2px solid var(--hair);padding:2px 0 2px 14px;max-width:58ch}
+.exh p{font-size:14px;color:var(--ink);margin-bottom:6px}
+.exh p:last-child{margin-bottom:0}
+.exh .t{font-weight:700}
+.exh .p{color:var(--muted);font-weight:400}
+
+/* transit segment between stops */
+.go{position:relative;padding:0 0 26px;display:flex;align-items:flex-start;gap:9px;font-size:13.5px;color:var(--muted);max-width:58ch}
+.go::before{content:"";position:absolute;left:-24px;top:4px;width:8px;height:14px;
+  border-left:2px dashed var(--muted);opacity:.45}
+.go.tmove{display:block}
+.go.tmove::before{left:-29px;top:5px;width:18px;height:18px;border:none;border-radius:50%;background:var(--lc);opacity:1}
+.go.tmove .stop-time{margin-bottom:3px}
+.go.tmove .go-row{display:flex;align-items:flex-start;gap:9px;font-size:13.5px;color:var(--muted);max-width:58ch}
+.badges{display:inline-flex;gap:4px;flex-shrink:0;transform:translateY(1.5px)}
+.bd{display:inline-flex;align-items:center;justify-content:center;min-width:22px;height:22px;padding:0 5px;
+  border-radius:5px;font-size:11.5px;font-weight:800;color:#fff;letter-spacing:.01em}
+.bd.h{background:#8f9394}.bd.e{background:#b6007a}.bd.g{background:#ff9500}
+.bd.c{background:#00bb85}.bd.a{background:#ec6e65}.bd.m{background:#f62e36}
+.bd.i{background:#006ab8}.bd.jr{background:#2e8b3a}.bd.kk{background:#00457c}.bd.mo{background:#003687}
+.bd.bus{background:#555550}.bd.walk{background:#fff;color:var(--ink);border:1.5px solid var(--ink)}
+.bd.taxi{background:#26221e}
+
+/* ---------- conditional option box ---------- */
+.alt-box{border:1.5px dashed var(--lc);border-radius:10px;padding:14px 16px 12px;margin-top:14px;max-width:58ch}
+.alt-box .alt-tag{display:inline-block;font-size:11.5px;font-weight:700;color:var(--lc);border:1px solid var(--lc);border-radius:999px;padding:2px 10px;margin-bottom:10px}
+.alt-box p{font-size:13.5px;color:var(--ink);margin-bottom:8px;line-height:1.6}
+.alt-box p:last-child{margin-bottom:0}
+.alt-box .t{font-weight:700}
+.alt-box .p{color:var(--muted);font-weight:400}
+
+/* ---------- track labels (inline sections) ---------- */
+.track-label{display:flex;align-items:center;gap:8px;font-size:15.5px;font-weight:800;margin:22px 0 4px}
+.track-label i{width:10px;height:10px;border-radius:50%;background:var(--lc);flex-shrink:0}
+
+/* ---------- ginza walk list ---------- */
+.walk{list-style:none;margin-top:14px;max-width:58ch}
+.walk li{display:flex;gap:12px;padding:12px 0;border-bottom:1px dashed var(--hair)}
+.walk li:last-child{border-bottom:none}
+.walk .n{flex-shrink:0;width:24px;height:24px;border-radius:50%;background:var(--lc);color:#fff;font-size:12.5px;font-weight:800;display:flex;align-items:center;justify-content:center;margin-top:1px}
+.walk .nm{font-weight:700;font-size:15px}
+.walk .tag{display:inline-block;font-size:11px;font-weight:600;padding:1.5px 8px;border-radius:999px;margin-left:7px;vertical-align:2px}
+.walk .tag.ex{background:var(--lc);color:#fff}
+.walk .tag.st{border:1px solid var(--muted);color:var(--muted)}
+.walk .cl{font-size:12px;color:var(--muted);margin-left:7px}
+.walk p{font-size:13.5px;color:var(--muted);margin-top:2px}
+.walk .th{flex-shrink:0;width:88px;height:66px;border-radius:6px;object-fit:cover;background:var(--hair);margin-top:2px}
+@media(max-width:480px){.walk .th{width:70px;height:54px}}
+a.pl{color:inherit;text-decoration:underline;text-decoration-color:#cfcfc6;text-decoration-thickness:1px;text-underline-offset:3px}
+a.pl:hover{text-decoration-color:var(--ink)}
+a.wl{display:inline-block;font-size:12px;color:var(--muted);text-decoration:underline;text-decoration-color:#cfcfc6;text-underline-offset:2px;margin-top:2px;word-break:break-all}
+a.wl:hover{color:var(--ink);text-decoration-color:var(--ink)}
+
+/* ---------- free tracks ---------- */
+.tracks{margin:6px 0 26px}
+.tracks-title{font-size:15px;font-weight:700;margin-bottom:4px}
+.tracks-sub{font-size:13.5px;color:var(--muted);margin-bottom:16px;max-width:58ch}
+.track-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+@media(max-width:620px){.track-grid{grid-template-columns:1fr}}
+.track{background:var(--card);border:1px solid var(--hair);border-radius:10px;padding:16px 18px;border-top:4px solid var(--lc)}
+.track h4{font-size:15.5px;font-weight:700;margin-bottom:2px}
+.track .who{font-size:12.5px;color:var(--muted);margin-bottom:10px}
+.track ul{list-style:none}
+.track li{font-size:13.5px;padding:5px 0;border-top:1px dashed var(--hair);color:var(--ink)}
+.track li:first-child{border-top:none}
+.track li span{color:var(--muted)}
+.track .route{margin-top:10px;padding-top:10px;border-top:1px solid var(--hair);font-size:12.5px;color:var(--muted);display:flex;gap:7px;align-items:flex-start}
+
+/* ---------- figures ---------- */
+.fig{margin:14px 0 4px;max-width:58ch}
+.fig img{width:100%;height:auto;display:block;border-radius:8px;background:var(--hair)}
+.fig > img + img{margin-top:8px}
+.fig .duo{display:grid;grid-template-columns:1fr 1fr;gap:8px;align-items:start}
+.fig .trio{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;align-items:start}
+.fig .trio img{aspect-ratio:4/3;object-fit:cover}
+.fig .duo.crop img{aspect-ratio:4/3;object-fit:cover}
+.fig figcaption{font-size:12px;color:var(--muted);margin-top:6px;line-height:1.5}
+.fig2{display:grid;grid-template-columns:1fr 1fr;gap:8px;align-items:start}
+.fig2 img{width:100%;height:auto;display:block;border-radius:8px;background:var(--hair)}
+
+/* ---------- overview map ---------- */
+.mapsec{padding:44px 0 8px}
+.mapsec h2{font-size:clamp(22px,4vw,28px);font-weight:800;letter-spacing:-0.02em;margin-bottom:6px}
+.mapsec .day-sub{margin-bottom:18px}
+.mapbox{background:var(--card);border:1px solid var(--hair);border-radius:12px;padding:10px 6px 2px}
+.mapbox.mini{max-width:58ch;margin:14px 0 8px;padding:8px 6px 6px}
+.maplayer{position:relative}
+.mapbg{position:absolute;inset:0;width:100%;height:100%;object-fit:fill;opacity:.3;filter:grayscale(.55) contrast(.85);border-radius:8px}
+.maplayer svg{position:relative}
+.mapbox svg{width:100%;height:auto;display:block}
+.map-legend{display:flex;flex-wrap:wrap;gap:6px 14px;padding:10px 12px 12px;font-size:12.5px;color:var(--muted)}
+.map-legend span[data-day]{cursor:pointer;user-select:none;padding:3px 10px;border-radius:999px;border:1px solid transparent}
+.map-legend span[data-day]:hover{border-color:var(--hair)}
+.map-legend span[data-day].on{border-color:var(--ink);color:var(--ink);background:var(--paper)}
+.map-legend span[data-day]:focus-visible{outline:2px solid var(--ink);outline-offset:2px}
+.map-legend .hint{width:100%;font-size:11.5px;color:#a3a39a;padding-left:2px}
+.mapbox .dg{transition:opacity .25s}
+.mapbox[data-f="d1"] .dg:not(.d1),.mapbox[data-f="d2"] .dg:not(.d2),
+.mapbox[data-f="d3"] .dg:not(.d3),.mapbox[data-f="d4"] .dg:not(.d4){opacity:.06}
+.map-legend i{display:inline-block;width:9px;height:9px;border-radius:50%;margin-right:6px;transform:translateY(0.5px)}
+.map-links{margin-top:10px;font-size:13px}
+.map-links a{color:var(--ink)}
+
+/* ---------- notes / footer ---------- */
+.notes{margin:48px 0 0;padding:26px 0 0;border-top:1px solid var(--hair)}
+.notes h3{font-size:18px;font-weight:800;letter-spacing:-0.01em;margin-bottom:14px}
+.notes ul{list-style:none;max-width:62ch}
+.notes li{font-size:14.5px;padding:9px 0;border-bottom:1px dashed var(--hair);color:var(--ink)}
+.notes li b{font-weight:700}
+.notes li span{color:var(--muted)}
+footer{padding:44px 0 64px;font-size:13px;color:var(--muted)}
+footer .route-strip{margin-bottom:16px}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap">
+    <div class="mast-top">
+      <span class="kicker">SADI Inspiration Tour</span>
+      <span class="mast-dates">2026. 9. 29 화 – 10. 2 금</span>
+    </div>
+    <h1 class="mega" aria-label="TOKYO">T<span class="ring" aria-hidden="true"></span>KY<span class="ring" aria-hidden="true"></span></h1>
+    <div class="route-strip hero" aria-hidden="true">
+      <span style="background:var(--d1)"></span><span style="background:var(--d2)"></span>
+      <span style="background:var(--d3)"></span><span style="background:var(--d4)"></span>
+    </div>
+    <p class="header-meta">
+      매일 하나의 지역을 축으로 움직이고, 오후에는 관심사에 따라 트랙을 골라 흩어졌다가 저녁에 다시 모입니다.
+      아래 각 날짜의 세로 선은 그날의 실제 이동 축이 되는 노선 색입니다.
+    </p>
+  </div>
+</header>
+
+<nav aria-label="날짜 이동">
+  <div class="wrap">
+    <a href="#map"><b style="background:var(--ink)"></b>전체 지도</a>
+    <a href="#d1"><b style="background:var(--d1)"></b>9/29 긴자</a>
+    <a href="#d2"><b style="background:var(--d2)"></b>9/30 아자부다이 · 무사시노</a>
+    <a href="#d3"><b style="background:var(--d3)"></b>10/1 타카나와 · 아오야마</a>
+    <a href="#d4"><b style="background:var(--d4)"></b>10/2 롯폰기 · 도쿄역</a>
+  </div>
+</nav>
+
+<main class="wrap">
+
+<!-- ======================= MAP ======================= -->
+<section class="mapsec" id="map">
+  <h2>전체 지도</h2>
+  <p class="day-sub">실제 위치 좌표로 그린 지도입니다. 검은 네모가 숙소, 굵은 선은 날짜별 이동 축이고, 방향을 잡기 쉽게 도쿄만·황거·요요기공원·야마노테선·도쿄타워를 함께 그렸습니다. 무사시노와 하네다만 빼면 전부 반경 5km 안입니다.</p>
+  <div class="mapbox" id="mapbox">
+    <div class="maplayer">
+    <svg viewBox="0 0 720 540" role="img" aria-label="방문지 전체 위치 지도" font-family="inherit">
+      <!-- geography -->
+      <g aria-hidden="true">
+        <polygon points="720,205 640,240 600,258 560,272 505,298 500,330 483,388 458,462 448,540 720,540" fill="#dfe8ec"/>
+        <polyline points="627,30 618,90 640,150 655,200 678,222" fill="none" stroke="#dfe8ec" stroke-width="9" stroke-linecap="round"/>
+        <text x="608" y="430" font-size="10" fill="#a8bcc4">도쿄만</text>
+        <rect x="418" y="110" width="86" height="72" rx="26" fill="#e5ecdf"/>
+        <text x="446" y="151" font-size="9.5" fill="#a9b8a0">황거</text>
+        <rect x="122" y="178" width="102" height="86" rx="30" fill="#e5ecdf"/>
+        <text x="146" y="225" font-size="9.5" fill="#a9b8a0">요요기공원</text>
+        <rect x="202" y="120" width="56" height="40" rx="16" fill="#e5ecdf"/>
+        <rect x="462" y="196" width="24" height="26" rx="8" fill="#e5ecdf"/>
+        <rect x="416" y="300" width="32" height="34" rx="11" fill="#e5ecdf"/>
+        <polyline points="173,99 188,231 182,295 227,364 259,438 301,484 380,470 390,429 427,371 479,316 485,254 509,203 531,167 545,120" fill="none" stroke="#d4d4cb" stroke-width="3" opacity=".9"/>
+        <text x="238" y="416" font-size="9.5" fill="#b3b3aa" transform="rotate(-52 238 416)">야마노테선</text>
+        <polyline points="531,167 500,98 400,112 333,118 173,99" fill="none" stroke="#d4d4cb" stroke-width="2" stroke-dasharray="4 4" opacity=".7"/>
+        <path d="M427,304 L421,318 L433,318 Z" fill="none" stroke="#d8a595" stroke-width="1.8"/>
+        <text x="427" y="330" font-size="9" fill="#c7a196" text-anchor="middle">도쿄타워</text>
+      </g>
+      <!-- day route hints -->
+      <polyline class="dg d1" points="347,274 520,221" fill="none" stroke="var(--d1)" stroke-width="3" opacity=".3"/>
+      <polyline class="dg d2" points="347,274 386,286" fill="none" stroke="var(--d2)" stroke-width="3" opacity=".3"/>
+      <polyline class="dg d2" points="347,274 60,300" fill="none" stroke="var(--d2)" stroke-width="2" stroke-dasharray="5 5" opacity=".3"/>
+      <polyline class="dg d3" points="347,274 387,412 193,294" fill="none" stroke="var(--d3)" stroke-width="3" opacity=".28"/>
+      <polyline class="dg d3" points="100,171 347,274" fill="none" stroke="var(--d3)" stroke-width="2" stroke-dasharray="5 5" opacity=".22"/>
+      <polyline class="dg d4" points="347,274 338,247 313,262 545,198 519,176" fill="none" stroke="var(--d4)" stroke-width="3" opacity=".28"/>
+      <polyline class="dg d1 d4" points="387,412 430,505" fill="none" stroke="#9a9a92" stroke-width="2" stroke-dasharray="5 5" opacity=".5"/>
+
+      <!-- hotel -->
+      <rect x="340" y="267" width="14" height="14" fill="var(--ink)" rx="2"/>
+      <text x="347" y="296" font-size="11.5" font-weight="700" fill="var(--ink)" text-anchor="middle">숙소 소테츠 프레사 인 롯폰기</text>
+
+      <!-- day1 -->
+      <g class="dg d1">
+      <circle cx="520" cy="221" r="7" fill="var(--d1)"/>
+      <text x="532" y="225" font-size="11" fill="var(--ink)">긴자 — ggg · 소니파크 · 에르메스 · 폴라 · DSM · 이토야 · 츠타야</text>
+      <circle cx="478" cy="316" r="5.5" fill="var(--d1)"/>
+      <text x="489" y="320" font-size="11" fill="var(--ink)">텐도목코</text>
+      </g>
+
+      <!-- day2 -->
+      <g class="dg d2">
+      <circle cx="386" cy="286" r="7" fill="var(--d2)"/>
+      <text x="397" y="290" font-size="11" fill="var(--ink)">아자부다이힐즈 — 팀랩 · 갤러리 · 파미마</text>
+      <text x="30" y="318" font-size="11" fill="var(--muted)">◀ 무사시노미술대학 (JR 추오선, 서쪽 약 25km)</text>
+      </g>
+
+      <!-- day3 -->
+      <g class="dg d3">
+      <circle cx="265" cy="277" r="7" fill="var(--d3)"/>
+      <text x="255" y="281" font-size="11" fill="var(--ink)" text-anchor="end">네즈미술관</text>
+      <circle cx="238" cy="259" r="7" fill="var(--d3)"/>
+      <text x="230" y="255" font-size="11" fill="var(--ink)" text-anchor="end">아오야마 — 요지 · 서점 · 파피에</text>
+      <circle cx="311" cy="250" r="5.5" fill="var(--d3)"/>
+      <text x="303" y="240" font-size="11" fill="var(--ink)" text-anchor="end">갤러리·마 · 카리모쿠 (노기자카)</text>
+      <circle cx="387" cy="412" r="7" fill="var(--d3)"/>
+      <text x="399" y="416" font-size="11" fill="var(--ink)">MoN 타카나와 (센가쿠지)</text>
+      <circle cx="193" cy="294" r="7" fill="var(--d3)"/>
+      <text x="185" y="313" font-size="11" fill="var(--ink)">시부야 — d47 뮤지엄</text>
+      <circle cx="100" cy="171" r="5.5" fill="var(--d3)"/>
+      <text x="110" y="167" font-size="11" fill="var(--ink)">ICC (하쓰다이)</text>
+      </g>
+
+      <!-- day4 -->
+      <g class="dg d4">
+      <circle cx="338" cy="245" r="5.5" fill="var(--d4)"/>
+      <text x="345" y="238" font-size="11" fill="var(--ink)">21_21 · 미드타운</text>
+      <circle cx="311" cy="266" r="5.5" fill="var(--d4)"/>
+      <text x="303" y="258" font-size="11" fill="var(--ink)" text-anchor="end">국립신미술관</text>
+      <circle cx="545" cy="198" r="5.5" fill="var(--d4)"/>
+      <text x="556" y="202" font-size="11" fill="var(--ink)">아티존 (교바시)</text>
+      <circle cx="519" cy="176" r="5.5" fill="var(--d4)"/>
+      <text x="512" y="166" font-size="11" fill="var(--ink)" text-anchor="end">KITTE · 도쿄역</text>
+      </g>
+
+      <text class="dg d1 d4" x="440" y="522" font-size="11" fill="var(--muted)">하네다공항 ▶ (남쪽, 하마마쓰초에서 모노레일 약 40분)</text>
+    </svg>
+    </div>
+    <div class="map-legend">
+      <span data-day="d1" role="button" tabindex="0"><i style="background:var(--d1)"></i>9/29 긴자</span>
+      <span data-day="d2" role="button" tabindex="0"><i style="background:var(--d2)"></i>9/30 아자부다이 · 무사시노</span>
+      <span data-day="d3" role="button" tabindex="0"><i style="background:var(--d3)"></i>10/1 타카나와 · 아오야마 · 시부야</span>
+      <span data-day="d4" role="button" tabindex="0"><i style="background:var(--d4)"></i>10/2 롯폰기 · 도쿄역</span>
+      <span class="hint">날짜를 누르면 그날 동선만 표시 · 다시 누르면 전체</span>
+    </div>
+  </div>
+</section>
+
+<!-- ======================= DAY 1 ======================= -->
+<section class="day" id="d1" style="--lc:var(--d1)">
+  <div class="day-head">
+    <span class="day-num" style="background:var(--d1)">Day 1</span>
+    <h2>9/29 화 — 도착, 그리고 긴자</h2>
+  </div>
+  <p class="day-sub">
+    이동일이지만 오후를 통째로 긴자에 씁니다. 긴자는 기업이 문화 공간을 자기 브랜드의 얼굴로 운영하는 방식—DNP의 ggg, 폴라의 아넥스, 소니의 파크, 에르메스의 포럼—을 반나절 도보권 안에서 비교해볼 수 있는 동네입니다.
+  </p>
+
+  <div class="line">
+    <div class="stop">
+      <div class="stop-time">07:00 – 11:20</div>
+      <div class="stop-name">김포 → 하네다</div>
+      <p class="stop-desc">07:00 김포공항 집합, 09:00 출발, 11:20 하네다 T3 도착.</p>
+    </div>
+    <div class="go"><span class="badges"><span class="bd mo">모노</span><span class="bd e">E</span></span>
+      <span>하네다 T3 → 도쿄 모노레일(공항쾌속 약 13분) → 하마마쓰초 → 도보 4분 다이몬역 → 오에도선 → 롯폰기. 약 40분, 환승 1회. 롯폰기역에서 호텔까지 도보 5분.</span></div>
+
+    <div class="stop">
+      <div class="stop-time">12:20</div>
+      <div class="stop-name">숙소 — <a class="pl" href="https://sotetsu-hotels.com/fresa-inn/tokyo-roppongi/" target="_blank" rel="noopener">소테츠 프레사 인 도쿄 롯폰기</a> (짐 맡기기)</div>
+      <p class="stop-desc">롯폰기 3초메. 히비야선·오에도선 롯폰기역 도보 5분, 아자부다이힐즈 도보 13분 — 이 위치 덕에 이번 일정 대부분이 환승 0–1회로 끝납니다. 체크인 전이니 짐만 맡기고 바로 점심으로. <a class="wl" href="https://sotetsu-hotels.com/fresa-inn/tokyo-roppongi/" target="_blank" rel="noopener">sotetsu-hotels.com</a></p>
+      <figure class="fig"><img src="https://sotetsu-hotels.com/fresa-inn/datas/images/2025/02/12/7bee118a1af92ac32ae395d552c4667b6c13353d.jpg" alt="소테츠 프레사 인 도쿄 롯폰기 외관" loading="lazy" onerror="this.closest('figure').style.display='none'">
+      <figcaption>소테츠 프레사 인 도쿄 롯폰기. 사진: 소테츠 호텔즈</figcaption></figure>
+    </div>
+    <div class="go"><span class="badges"><span class="bd walk">도보</span></span>
+      <span>점심 장소까지 도보 이동.</span></div>
+
+    <div class="stop">
+      <div class="stop-time">13:00</div>
+      <div class="stop-name">점심 — 츠지한 (롯폰기)</div>
+      <p class="stop-desc">카이센동 한 그릇에 줄 서는 집. 웨이팅이 길면 도쿄 미드타운 식당가로 대체.</p>
+    </div>
+    <div class="go"><span class="badges"><span class="bd h">H</span><span class="bd e">E</span></span>
+      <span>A트랙은 롯폰기 → 히비야선 → 긴자, 환승 없이 약 15분 — 이 직통이 숙소 위치의 가장 큰 장점입니다. B트랙은 롯폰기 → 오에도선 → 다이몬, 약 8분.</span></div>
+
+    <div class="stop">
+      <div class="stop-time">15:00 –</div>
+      <div class="stop-name">오후 자유 트랙 — 2갈래</div>
+      <p class="track-label"><i></i>A. 긴자 자유 트랙</p>
+      <p class="stop-desc">긴자 1초메에서 남쪽으로 내려오는 도보 코스로 순서를 잡았습니다. 가까운 곳끼리 묶으면서 마감 시간과도 맞아떨어지는 순서 — 입장 마감이 가장 빠른 폴라(18:30)에서 시작해 가장 늦게 닫는 츠타야(21:00)에서 끝납니다. 관심 없는 곳은 건너뛰어도 동선은 그대로 유지됩니다.</p>
+      <div class="mapbox mini">
+        <svg viewBox="0 0 720 420" role="img" aria-label="긴자 트랙 도보 지도" font-family="inherit">
+          <g aria-hidden="true">
+            <polyline points="310,30 110,405" fill="none" stroke="#d4d4cb" stroke-width="3" opacity=".9"/>
+            <text x="318" y="62" font-size="9.5" fill="#b3b3aa">JR 유라쿠초</text>
+            <polyline points="560,103 280,360" fill="none" stroke="#e6e6de" stroke-width="9"/>
+            <text x="520" y="122" font-size="9.5" fill="#b3b3aa" transform="rotate(-43 520 122)">주오도리</text>
+            <polyline points="120,151 640,356" fill="none" stroke="#e6e6de" stroke-width="9"/>
+            <text x="152" y="176" font-size="9.5" fill="#b3b3aa" transform="rotate(21 152 176)">하루미도리</text>
+          </g>
+          <polyline points="526,128 475,181 275,212 326,266 292,323 339,306" fill="none" stroke="var(--d1)" stroke-width="3" opacity=".35"/>
+          <circle cx="391" cy="258" r="5" fill="#9a9a92"/>
+          <text x="400" y="254" font-size="10.5" fill="var(--muted)">긴자역 · 4초메 교차로</text>
+          <circle cx="491" cy="297" r="4.5" fill="#9a9a92"/>
+          <text x="500" y="301" font-size="10.5" fill="var(--muted)">히가시긴자 — B트랙 합류</text>
+          <circle cx="526" cy="128" r="10" fill="var(--d1)"/><text x="526" y="132" font-size="11" font-weight="800" fill="#fff" text-anchor="middle">1</text>
+          <text x="541" y="132" font-size="11" fill="var(--ink)">폴라 뮤지엄 아넥스</text>
+          <circle cx="475" cy="181" r="10" fill="var(--d1)"/><text x="475" y="185" font-size="11" font-weight="800" fill="#fff" text-anchor="middle">2</text>
+          <text x="490" y="185" font-size="11" fill="var(--ink)">이토야</text>
+          <circle cx="258" cy="190" r="4.5" fill="none" stroke="var(--d1)" stroke-width="2.5"/>
+          <text x="248" y="186" font-size="10.5" fill="var(--muted)" text-anchor="end">소니파크</text>
+          <circle cx="275" cy="212" r="10" fill="var(--d1)"/><text x="275" y="216" font-size="11" font-weight="800" fill="#fff" text-anchor="middle">3</text>
+          <text x="259" y="222" font-size="11" fill="var(--ink)" text-anchor="end">에르메스 르 포럼</text>
+          <circle cx="326" cy="266" r="10" fill="var(--d1)"/><text x="326" y="270" font-size="11" font-weight="800" fill="#fff" text-anchor="middle">4</text>
+          <text x="313" y="276" font-size="11" fill="var(--ink)" text-anchor="end">도버 스트리트 마켓</text>
+          <circle cx="292" cy="323" r="10" fill="var(--d1)"/><text x="292" y="327" font-size="11" font-weight="800" fill="#fff" text-anchor="middle">5</text>
+          <text x="277" y="333" font-size="11" fill="var(--ink)" text-anchor="end">ggg</text>
+          <circle cx="339" cy="306" r="10" fill="var(--d1)"/><text x="339" y="310" font-size="11" font-weight="800" fill="#fff" text-anchor="middle">6</text>
+          <text x="354" y="312" font-size="11" fill="var(--ink)">긴자식스 츠타야</text>
+          <text x="30" y="402" font-size="10.5" fill="var(--muted)">◀ 신바시 · 하마마쓰초(텐도목코) 방면</text>
+        </svg>
+      </div>
+      <figure class="fig"><img src="https://commons.wikimedia.org/wiki/Special:FilePath/Ginza_Sony_Park.jpg?width=1000" alt="긴자 소니 파크 외관" loading="lazy" onerror="this.closest('figure').style.display='none'">
+      <figcaption>긴자 소니 파크 — 옛 소니빌딩을 헐고 ‘수직 공원’으로 다시 지은 건물. 사진: Wikimedia Commons</figcaption></figure>
+      <ol class="walk">
+        <li><span class="n">1</span><div>
+          <a class="pl" href="https://www.po-holdings.co.jp/m-annex/" target="_blank" rel="noopener"><span class="nm">폴라 뮤지엄 아넥스</span></a><span class="tag ex">전시</span><span class="cl">입장 18:30 마감 · 무료</span>
+          <p><b>기요카와 아사미 + 나와 코헤이 ‘보이지 않는 정원’</b> (9.16–11.8). 화장품 기업 폴라가 운영하는 무료 현대미술 갤러리. <a class="wl" href="https://www.po-holdings.co.jp/m-annex/" target="_blank" rel="noopener">po-holdings.co.jp/m-annex</a></p>
+        </div></li>
+        <li><span class="n">2</span><div>
+          <a class="pl" href="https://www.ito-ya.co.jp/" target="_blank" rel="noopener"><span class="nm">이토야</span></a><span class="tag st">스토어</span><span class="cl">~20:00</span>
+          <p>문구 전문 12층. 층마다 하나의 주제로 큐레이션하는 방식 자체가 볼거리. <a class="wl" href="https://www.ito-ya.co.jp/" target="_blank" rel="noopener">ito-ya.co.jp</a></p>
+        </div><img class="th" src="https://commons.wikimedia.org/wiki/Special:FilePath/Ginza_Itoya_(34207621235).jpg?width=300" alt="긴자 이토야" loading="lazy" onerror="this.remove()"></li>
+        <li><span class="n">3</span><div>
+          <a class="pl" href="https://www.hermes.com/jp/ja/story/maison-ginza/" target="_blank" rel="noopener"><span class="nm">긴자 메종 에르메스 르 포럼</span></a><span class="tag ex">전시</span><span class="cl">~19:00 · 무료</span>
+          <p><b>앤 베로니카 얀센스 ‘도쿄 긴자 4-1번지 5초메’</b> (9.11–2027.1.11). 렌조 피아노의 유리블록 건물 자체가 절반. 길 건너 <a class="pl" href="https://www.sonypark.com/" target="_blank" rel="noopener">소니 파크</a>(수직 공원)도 바로 옆이라 잠깐 들르기 좋습니다. <a class="wl" href="https://www.hermes.com/jp/ja/story/maison-ginza/" target="_blank" rel="noopener">hermes.com/maison-ginza</a> <a class="wl" href="https://www.sonypark.com/" target="_blank" rel="noopener">sonypark.com</a></p>
+        </div><img class="th" src="https://commons.wikimedia.org/wiki/Special:FilePath/Hermes,_Ginza,_Tokyo_-_DSC09661.JPG?width=300" alt="긴자 메종 에르메스" loading="lazy" onerror="this.remove()"></li>
+        <li><span class="n">4</span><div>
+          <a class="pl" href="https://ginza.doverstreetmarket.com/" target="_blank" rel="noopener"><span class="nm">도버 스트리트 마켓 긴자</span></a><span class="tag st">스토어</span><span class="cl">~20:00</span>
+          <p>레이 가와쿠보의 ‘Beautiful Chaos’. 층마다 디스플레이가 하나의 설치. <a class="wl" href="https://ginza.doverstreetmarket.com/" target="_blank" rel="noopener">ginza.doverstreetmarket.com</a></p>
+        </div></li>
+        <li><span class="n">5</span><div>
+          <a class="pl" href="https://www.dnpfcp.jp/gallery/ggg/" target="_blank" rel="noopener"><span class="nm">ggg 긴자 그래픽 갤러리</span></a><span class="tag ex">전시</span><span class="cl">~19:00</span>
+          <p><b>타나카 요시히사 ‘ARCHIVE / ACHIEVE’</b> (9.4–10.21). DNP가 1986년부터 운영하는 그래픽 전문관. <a class="wl" href="https://www.dnpfcp.jp/gallery/ggg/" target="_blank" rel="noopener">dnpfcp.jp/gallery/ggg</a></p>
+        </div><img class="th" src="image/ggg.jpg" alt="긴자 그래픽 갤러리" loading="lazy" onerror="this.remove()"></li>
+        <li><span class="n">6</span><div>
+          <a class="pl" href="https://store.tsite.jp/ginza/" target="_blank" rel="noopener"><span class="nm">긴자 식스 츠타야</span></a><span class="tag st">스토어</span><span class="cl">~21:00</span>
+          <p>6층 아트북 서점. 대형 서가와 아트 큐레이션. 마지막 코스라 시간에 쫓기지 않고 볼 수 있습니다. <a class="wl" href="https://store.tsite.jp/ginza/" target="_blank" rel="noopener">store.tsite.jp/ginza</a></p>
+        </div></li>
+      </ol>
+      <p class="track-label"><i></i>B. 텐도목코 트랙</p>
+      <p class="stop-desc"><a class="pl" href="https://www.tendo-mokko.co.jp/" target="_blank" rel="noopener">텐도목코 쇼룸</a>(하마마쓰초) — 야나기 소리 버터플라이 스툴을 만든 성형합판 가구의 본가. 견학 예약제, 17:00까지, 화요일 정상 영업. 다이몬역에서 도보 3분이라 숙소에서 가장 빨리 닿는 트랙입니다. 관람 후 아사쿠사선 다이몬 → 히가시긴자 약 8분으로 이동해 16시대에 A트랙 코스에 합류 — 마감이 늦은 곳들(이토야·DSM·츠타야)은 그때부터도 충분히 돌 수 있습니다. <a class="wl" href="https://www.tendo-mokko.co.jp/" target="_blank" rel="noopener">tendo-mokko.co.jp</a></p>
+      <figure class="fig"><img src="image/tendo.jpg" alt="텐도목코 쇼룸" loading="lazy" onerror="this.closest('figure').style.display='none'">
+      <figcaption>텐도목코 도쿄 쇼룸</figcaption></figure>
+    </div>
+
+    <div class="stop">
+      <div class="stop-time">19:00</div>
+      <div class="stop-name">저녁 — 긴자</div>
+      <p class="stop-desc">식사 후 귀가: 긴자 → 히비야선 → 롯폰기, 환승 없이 약 15분.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ======================= DAY 2 ======================= -->
+<section class="day" id="d2" style="--lc:var(--d2)">
+  <div class="day-head">
+    <span class="day-num" style="background:var(--d2)">Day 2</span>
+    <h2>9/30 수 — 아자부다이힐즈, 무사시노</h2>
+  </div>
+  <p class="day-sub">
+    오전은 초고층 개발지의 몰입형 미디어아트, 오후는 교외 미대 캠퍼스. 같은 날에 두 극단을 붙여 놓은 이유가 있습니다—규모와 자본이 만드는 경험과, 아카이브와 교육이 만드는 경험을 하루 안에서 비교하게 됩니다.
+  </p>
+
+  <div class="line">
+    <div class="stop">
+      <div class="stop-time">09:00</div>
+      <div class="stop-name">호텔 로비 집합</div>
+    </div>
+    <div class="go"><span class="badges"><span class="bd walk">도보</span></span><span>아자부다이힐즈까지 13분.</span></div>
+
+    <div class="stop">
+      <div class="stop-time">09:30</div>
+      <div class="stop-name"><a class="pl" href="https://borderless.teamlab.art/jp/" target="_blank" rel="noopener">teamLab Borderless</a></div>
+      <p class="stop-desc">예약 시간 엄수(재입장 불가). 신작 포함 75개 이상 작품군의 ‘지도가 없는 뮤지엄’. 작품 간 경계가 없어서 공간 연출과 인터랙션 설계를 뜯어보기 좋습니다. <a class="wl" href="https://www.teamlab.art/e/tokyo/" target="_blank" rel="noopener">teamlab.art/e/tokyo</a></p>
+      <figure class="fig"><img src="https://teamlab-site.imagewave.pictures/b5EBo9Uo-OK6SM09ZTkEZQ/Yt5eET5oZzm6FBicauQUSY/width=1200,format=jpeg" alt="teamLab Borderless" loading="lazy" onerror="this.closest('figure').style.display='none'">
+      <figcaption>teamLab Borderless. 사진: teamLab 공식 사이트 (비공개 교육용 임시 링크)</figcaption></figure>
+      <div class="exh">
+        <p><span class="t">특별전 ‘우주의 비대칭성에 대하여’</span> <span class="p">(7.8–10.8) — Light Sculpture&nbsp;-&nbsp;Flow 공간 재개를 기념한 신작 시리즈 Asymmetric Existence·Chromatic Existence. 물질 표면 없이 빛의 흐름과 질서만으로 조각을 만든다는 개념 — 방문일이 회기 안에 들어갑니다. <a class="wl" href="https://www.teamlab.art/concept/asymmetry-universe/tokyo/" target="_blank" rel="noopener">teamlab.art/concept/asymmetry-universe</a></span></p>
+      </div>
+    </div>
+
+    <div class="stop">
+      <div class="stop-time">10:30</div>
+      <div class="stop-name"><a class="pl" href="https://www.azabudai-hills.com/" target="_blank" rel="noopener">아자부다이힐즈</a> 자유탐방</div>
+      <figure class="fig"><img src="image/azabudaihills.png" alt="아자부다이힐즈" loading="lazy" onerror="this.closest('figure').style.display='none'">
+      <figcaption>아자부다이힐즈</figcaption></figure>
+      <div class="exh">
+        <p><span class="t">아자부다이힐즈 갤러리</span> <span class="p">— 사카모토 류이치 + 다카타니 시로 ‘async–immersion / Ambient Kyoto–Tokyo’ (8.28–10.15). 사운드 중심 몰입형 설치. 오전 팀랩과 같은 ‘몰입’이라는 말이 얼마나 다른 결과가 되는지 비교해볼 것. <a class="wl" href="https://www.azabudai-hills.com/" target="_blank" rel="noopener">azabudai-hills.com</a></span></p>
+        <figure class="fig"><img src="image/sakamoto.png" alt="사카모토 류이치 + 다카타니 시로 전시" loading="lazy" onerror="this.closest('figure').style.display='none'">
+        <figcaption>사카모토 류이치 + 다카타니 시로 ‘async–immersion’</figcaption></figure>
+        <p><span class="t">파미마 파크 AZABUDAI</span> <span class="p">— 가미야초역 쪽 신규 점포. NIGO 크리에이티브 디렉션, 원더월 가타야마 마사미치 설계. 편의점이라는 포맷의 브랜딩 실험. <a class="wl" href="https://www.family.co.jp/" target="_blank" rel="noopener">family.co.jp</a></span></p>
+        <figure class="fig"><img src="image/famima.png" alt="파미마 파크 AZABUDAI" loading="lazy" onerror="this.closest('figure').style.display='none'">
+        <figcaption>파미마 파크 AZABUDAI — 원더월 가타야마 마사미치 설계</figcaption></figure>
+        <p><span class="t">오가키서점 아자부다이힐즈점</span> <span class="p">— 1942년 창업한 교토의 서점 오가키쇼텐(大垣書店)이 낸 도쿄 진출점. 책과 함께 공예·아트 큐레이션 코너를 갖춰, 서점이라는 포맷이 문화 편집 공간으로 확장되는 최근 흐름을 보여줍니다. 자유탐방 중 들르기 좋은 곳. <a class="wl" href="https://www.books-ogaki.co.jp/" target="_blank" rel="noopener">books-ogaki.co.jp</a></span></p>
+        <figure class="fig"><img src="image/ogakib.jpg" alt="오가키서점 아자부다이힐즈점" loading="lazy" onerror="this.closest('figure').style.display='none'">
+        <figcaption>오가키서점 아자부다이힐즈점</figcaption></figure>
+        <p><span class="t">그 밖에 들를 만한 곳</span> <span class="p">— 헤더윅 스튜디오가 설계한 저층부 가든 플라자와 중앙광장(단지의 디자인적 핵심은 사실 이 랜드스케이프), 모리 JP 타워 오피스 로비 천장의 올라퍼 엘리아슨 상설작 《상호 연결된 지금이 조화를 이루는 주기》, 중앙광장 잔디밭의 나라 요시토모·소네 유타카·잔 왕 퍼블릭 아트, 페이스 갤러리 도쿄(무료), 33층 스카이 로비(무료 전망), 지하의 아자부다이힐즈 마켓.</span></p>
+        <figure class="fig"><div class="duo crop">
+          <img src="image/eliasson.jpg" alt="올라퍼 엘리아슨 설치 작품" loading="lazy" onerror="this.remove()">
+          <img src="image/nara.jpg" alt="나라 요시토모 도쿄의 숲의 아이" loading="lazy" onerror="this.remove()">
+        </div>
+        <figcaption>올라퍼 엘리아슨 《상호 연결된 지금이 조화를 이루는 주기》(모리 JP 타워 로비) · 나라 요시토모 《도쿄의 숲의 아이》(중앙광장)</figcaption></figure>
+      </div>
+    </div>
+
+    <div class="stop">
+      <div class="stop-time">12:00</div>
+      <div class="stop-name">점심 — 아자부다이힐즈</div>
+    </div>
+    <div class="go tmove">
+      <div class="stop-time">14:00</div>
+      <div class="go-row"><span class="badges"><span class="bd e">E</span><span class="bd jr">JR</span><span class="bd bus">버스</span></span>
+      <span>무사시노로 출발. 롯폰기(오에도선, 호텔 앞) → 신주쿠 직통 약 9분 → JR 추오선 쾌속 → 고쿠분지 → 북구 4번 승강장 세이부버스 ‘무사시노비주쓰다이가쿠’행 약 25분. 총 약 1시간 30분. (대안: 고쿠분지에서 세이부고쿠분지선 다카노다이역, 도보 18분)</span></div>
+    </div>
+
+    <div class="stop">
+      <div class="stop-time">16:00</div>
+      <div class="stop-name"><a class="pl" href="https://mauml.musabi.ac.jp/museum/" target="_blank" rel="noopener">무사시노미술대학 미술관·도서관</a></div>
+      <p class="stop-desc">입장 무료, 평일 18:00까지. 캠퍼스 정문에서 직선으로 보이는 위치. <a class="wl" href="https://mauml.musabi.ac.jp/" target="_blank" rel="noopener">mauml.musabi.ac.jp</a></p>
+      <div class="exh">
+        <p><span class="t">MIX WORKS — tupera tupera의 일 2002–2026</span> <span class="p">— 그림책 원화부터 무대미술, 생활용품 디렉션까지 약 500점. 한 유닛이 25년간 매체를 넘나든 방식 자체가 커리큘럼. <a class="wl" href="https://mauml.musabi.ac.jp/" target="_blank" rel="noopener">mauml.musabi.ac.jp</a></span></p>
+        <figure class="fig"><img src="image/mix.jpg" alt="MIX WORKS — tupera tupera전" loading="lazy" onerror="this.closest('figure').style.display='none'">
+        <figcaption>MIX WORKS — tupera tupera의 일 2002–2026</figcaption></figure>
+        <p><span class="t">안자이 미즈마루와 일러스트레이션</span> <span class="p">— 기증 원화 13,000점 중 엄선. 인쇄 문화 전성기의 일러스트레이션·북디자인. <a class="wl" href="https://mauml.musabi.ac.jp/" target="_blank" rel="noopener">mauml.musabi.ac.jp</a></span></p>
+        <figure class="fig"><img src="image/anzai.jpg" alt="안자이 미즈마루와 일러스트레이션전" loading="lazy" onerror="this.closest('figure').style.display='none'">
+        <figcaption>안자이 미즈마루와 일러스트레이션 — 그림이 있고, 내가 있었다</figcaption></figure>
+        <p><span class="t">상설 — 근대 의자 컬렉션</span> <span class="p">— 명작 의자 400여 점을 실물로. 도판으로만 보던 의자의 실제 스케일 확인.</span></p>
+        <figure class="fig"><img src="image/chair.jpg" alt="무사비 근대 의자 컬렉션" loading="lazy" onerror="this.closest('figure').style.display='none'">
+        <figcaption>상설 — 근대 의자 컬렉션</figcaption></figure>
+        <p><span class="t">도서관</span> <span class="p">— 후지모토 소우 설계. 나선형 책장 벽이 곧 건물 구조. 서가 사이를 걸어볼 것.</span></p>
+      </div>
+      <figure class="fig">
+      <img src="image/musabi.webp" alt="무사시노미술대학 미술관·도서관" loading="lazy" onerror="this.remove()">
+      <img src="image/musabi2.webp" alt="무사시노미술대학 미술관·도서관" loading="lazy" onerror="this.remove()">
+      <figcaption>무사시노미술대학 미술관·도서관 — 후지모토 소우 설계</figcaption></figure>
+    </div>
+    <div class="go tmove">
+      <div class="stop-time">18:00</div>
+      <div class="go-row"><span class="badges"><span class="bd bus">버스</span></span>
+      <span>미술관 출발. 세이부버스 약 25분 → 고쿠분지역 북구.</span></div>
+    </div>
+
+    <div class="stop">
+      <div class="stop-time">18:30</div>
+      <div class="stop-name">저녁 — 고쿠분지역</div>
+      <p class="stop-desc">긴 귀갓길에 앞서 버스가 닿는 역에서 바로 저녁. 역 직결 상업빌딩 셀레오 고쿠분지의 식당가를 기본으로 하고, 북구 역전에도 선택지가 있습니다. 도심까지 참지 않아도 되니 하루의 피로 배분이 훨씬 낫습니다.</p>
+    </div>
+    <div class="go tmove">
+      <div class="stop-time">19:30</div>
+      <div class="go-row"><span class="badges"><span class="bd jr">JR</span><span class="bd e">E</span></span>
+      <span>귀갓길. 추오선 특별쾌속 → 신주쿠 약 25분 → 오에도선 롯폰기 직통 9분. 총 약 45분, 숙소 도착 후 바로 해산.</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- ======================= DAY 3 ======================= -->
+<section class="day" id="d3" style="--lc:var(--d3)">
+  <div class="day-head">
+    <span class="day-num" style="background:var(--d3)">Day 3</span>
+    <h2>10/1 목 — 타카나와, 그리고 각자의 오후</h2>
+  </div>
+  <p class="day-sub">
+    오전은 전원이 올해 3월 개관한 MoN Takanawa. 오후는 전공·관심사에 따라 네 갈래로 흩어졌다가, 저녁에 시부야 히카리에 d47 뮤지엄에서 다시 만나 함께 보고 식사합니다. 네즈미술관은 정원까지 제대로 보면 반나절이 걸리는 곳이라 독립 트랙으로 분리했습니다.
+  </p>
+
+  <div class="line">
+    <div class="stop">
+      <div class="stop-time">09:00</div>
+      <div class="stop-name">호텔 로비 집합</div>
+    </div>
+    <div class="go"><span class="badges"><span class="bd e">E</span><span class="bd a">A</span></span>
+      <span>롯폰기 → 오에도선 → 다이몬(같은 역에서 아사쿠사선 환승) → 센가쿠지 A4 출구 도보 3분. 약 20분, 환승 1회. (JR 다카나와게이트웨이역과도 직결)</span></div>
+
+    <div class="stop">
+      <div class="stop-time">10:00 – 13:00</div>
+      <div class="stop-name"><a class="pl" href="https://montakanawa.jp/" target="_blank" rel="noopener">MoN Takanawa: The Museum of Narratives</a></div>
+      <p class="stop-desc">2026년 3월 개관. 구마 겐고가 외장을 맡은 나선형 저층 건물로, 내부는 4층까지 뚫린 아트리움을 나선 계단과 슬로프가 감아 올라가는 입체 회랑 구조 — 걷는 것 자체가 관람입니다. 방문일은 시즌 전시 교체기(다음 프로그램 10/10 시작)라 무료 존 중심으로 봅니다. 11:00부터 자유탐방, 점심도 관내에서. <a class="wl" href="https://montakanawa.jp/" target="_blank" rel="noopener">montakanawa.jp</a></p>
+      <figure class="fig"><img src="image/mon.jpg" alt="MoN Takanawa" loading="lazy" onerror="this.closest('figure').style.display='none'">
+      <figcaption>MoN Takanawa — 다카나와 게이트웨이역 직결</figcaption></figure>
+      <div class="exh">
+        <p><span class="t">MoN Shop by Spiral</span> <span class="p">— 2층. 아오야마 스파이럴(와코루 아트센터)의 Spiral Market이 운영하는 아트·잡화 셀렉트숍. 한쪽에 펜타그램이 디자인한 MoN 오리지널 굿즈 코너(토트백·클리어파일·통행수형 키홀더 등)가 있어, 뮤지엄 굿즈가 브랜딩의 연장이 되는 사례를 볼 수 있습니다. <a class="wl" href="https://montakanawa.jp/facilities/shop/" target="_blank" rel="noopener">montakanawa.jp/facilities/shop</a></span></p>
+        <p><span class="t">펜타그램의 브랜딩·사이니지</span> <span class="p">— 로비의 사인과 플로어가이드부터 입체 조형까지 펜타그램이 관 전체의 크리에이티브를 담당. 건축(구마 겐고)–브랜딩(펜타그램)–운영(스파이럴)이 ‘나선’이라는 하나의 개념으로 관통되는 구조를 현장에서 확인할 것.</span></p>
+        <p><span class="t">미래문화의 문</span> <span class="p">— 로비 상설. 각 분야 32인이 고른 ‘100년 뒤에 잇고 싶은 문화’를 전시하는 설치.</span></p>
+        <p><span class="t">MoN 라이브러리</span> <span class="p">— 지하 1~3층을 관통하는 벽면 책장. 진행 중인 프로그램·아티스트 관련 서적과 굿즈가 꽂히고, 직접 꺼내 볼 수 있는 구역도 있습니다. 무료 퍼블릭 스페이스(단, 지하 공연 운영에 따라 접근 범위가 달라질 수 있음).</span></p>
+        <p><span class="t">옥상 — 하나미 테라스 · MoN 신사 · MoN 팜</span> <span class="p">— 나선 동선의 종착점. 벚나무를 심은 하나미 테라스, 작은 신사, 텃밭(MoN Farm)이 옥상에 함께 있어, ‘100년 앞의 문화’를 표방하는 이 관이 계절·신앙·경작이라는 오래된 시간 단위를 건물 꼭대기에 올려둔 구성 자체가 읽을거리입니다. 도시 조망도 여기서.</span></p>
+        <p><span class="t">그 밖에</span> <span class="p">— 1층 MoN Park Cafe by Spiral(파사드 나선에서 착안한 ‘스파이럴 코로네’), 앞 공원에서 보이는 다카나와 축제(築堤) 유적 — 1872년 일본 최초의 철도가 바다 위를 달리도록 쌓은 해상 제방으로, 2019년 재개발 공사 중 발굴돼 일부가 현지 보존된 사적, 그리고 구마 겐고의 목재 격자 지붕이 덮인 다카나와 게이트웨이역 자체.</span></p>
+      </div>
+    </div>
+    <div class="go tmove">
+      <div class="stop-time">13:30</div>
+      <div class="go-row"><span class="badges"><span class="bd a">A</span><span class="bd e">E</span></span>
+      <span>트랙별 분산 출발. 네 트랙 모두 센가쿠지 → 아사쿠사선 → 다이몬 환승이 공통 출발이고, 다이몬에서 오에도선 방향만 갈립니다(아오야마 방면 vs 신주쿠 방면).</span></div>
+    </div>
+
+    <div class="stop">
+      <div class="stop-time">14:00 – 17:30</div>
+      <div class="stop-name">오후 자유 트랙 — 4갈래</div>
+      <p class="stop-desc">시부야 히카리에 8층 d47 뮤지엄(18:30 기준)에서 다시 만나는 것으로 잡고, 각 트랙에서 역산해 움직입니다.</p>
+      <div class="track-grid" style="margin-top:14px">
+        <div class="track">
+          <h4>A. 네즈미술관 — 미술관·정원</h4>
+          <div class="who">한 곳을 느긋하게 보는 트랙</div>
+          <ul>
+            <li><a class="pl" href="https://www.nezu-muse.or.jp/" target="_blank" rel="noopener">네즈미술관</a> <span>— 구마 겐고 설계. 대나무 진입로, 낮은 조도의 전시실, 도심에 숨겨진 정원까지. 제대로 보면 2–3시간이 걸려 독립 트랙으로 분리. <b>온라인 날짜·시간 지정 예약제</b>(14:00–15:00 슬롯 권장, 변경·취소 불가, 입관 후엔 시간 제한 없음). 학생 요금(대학생 700엔~)은 학생증 필수</span> <a class="wl" href="https://www.nezu-muse.or.jp/" target="_blank" rel="noopener">nezu-muse.or.jp</a></li>
+          </ul>
+          <figure class="fig" style="margin:10px 0 2px"><img src="image/nezu.png" alt="네즈미술관 진입로" loading="lazy" onerror="this.closest('figure').style.display='none'"></figure>
+          <div class="route"><span class="badges"><span class="bd e">E</span><span class="bd g">G</span></span>
+            <span>다이몬 → 오에도선 → 아오야마잇초메 → 긴자선 → 오모테산도 도보 8분, 약 40분. 시부야 집합은 긴자선 1정거장</span></div>
+        </div>
+        <div class="track">
+          <h4>B. 아오야마 — 패션·서점·인쇄</h4>
+          <div class="who">한 시간에 한 곳씩 걷는 코스</div>
+          <ul>
+            <li>14:00 <a class="pl" href="https://www.yohjiyamamoto.co.jp/" target="_blank" rel="noopener">요지 야마모토 아오야마</a> <span>— 브랜드 세계관이 매장 건축까지 관통하는 예</span> <a class="wl" href="https://www.yohjiyamamoto.co.jp/" target="_blank" rel="noopener">yohjiyamamoto.co.jp</a></li>
+            <li>15:00 <a class="pl" href="https://aoyamabc.jp/" target="_blank" rel="noopener">아오야마 북 센터</a> / <a class="pl" href="https://utrecht.jp/" target="_blank" rel="noopener">Utrecht</a> <span>— 디자인서·독립출판</span> <a class="wl" href="https://aoyamabc.jp/" target="_blank" rel="noopener">aoyamabc.jp</a> <a class="wl" href="https://utrecht.jp/" target="_blank" rel="noopener">utrecht.jp</a></li>
+            <li>16:00 <a class="pl" href="https://archivestore.jp/" target="_blank" rel="noopener">아카이브 스토어</a> <span>— 빈티지 의류 아카이브</span> <a class="wl" href="https://archivestore.jp/" target="_blank" rel="noopener">archivestore.jp</a></li>
+            <li>17:00 <a class="pl" href="https://papierlabo.com/" target="_blank" rel="noopener">파피에 라보</a> <span>— 활판인쇄·종이 전문(진구마에 1초메, 하라주쿠역 북쪽. ~19시, 월·화 휴무)</span> <a class="wl" href="https://papierlabo.com/" target="_blank" rel="noopener">papierlabo.com</a></li>
+          </ul>
+          <figure class="fig" style="margin:10px 0 2px"><img src="image/archive.png" alt="아카이브 스토어" loading="lazy" onerror="this.closest('figure').style.display='none'"></figure>
+          <div class="route"><span class="badges"><span class="bd e">E</span><span class="bd g">G</span><span class="bd jr">JR</span></span>
+            <span>A트랙과 같은 경로로 오모테산도까지, 이후 도보 순회(동→서→북 스윕이라 되돌아가는 구간 없음). 시부야 집합은 파피에 라보 → 도보 8분 하라주쿠 → JR 1정거장, 약 15분</span></div>
+        </div>
+        <div class="track">
+          <h4>C. 하쓰다이 — 미디어아트</h4>
+          <div class="who">크리에이티브 컴퓨테이션 직결 트랙</div>
+          <ul>
+            <li><a class="pl" href="https://www.ntticc.or.jp/" target="_blank" rel="noopener">NTT ICC</a> <span>— 1997년부터 이어진 미디어아트 전문 기관. 무료 존 포함, 18:00까지. 기술 기반 작품의 보존·전시 방식을 볼 수 있는 드문 곳</span> <a class="wl" href="https://www.ntticc.or.jp/" target="_blank" rel="noopener">ntticc.or.jp</a></li>
+          </ul>
+          <figure class="fig" style="margin:10px 0 2px"><img src="image/icc.png" alt="NTT ICC 전시" loading="lazy" onerror="this.closest('figure').style.display='none'"></figure>
+          <div class="route"><span class="badges"><span class="bd e">E</span><span class="bd jr">JR</span></span>
+            <span>다이몬 → 오에도선 신주쿠 직통 → 게이오신선 1정거장 하쓰다이, 약 45분. 시부야 집합은 신주쿠 → JR 약 25분 — 이 트랙은 ICC에 집중</span></div>
+        </div>
+        <div class="track">
+          <h4>D. 노기자카 — 건축·가구</h4>
+          <div class="who">갤러리와 쇼룸 중심</div>
+          <ul>
+            <li><a class="pl" href="https://jp.toto.com/gallerma/" target="_blank" rel="noopener">갤러리·마</a> <span>— TOTO가 운영하는 건축 전문 갤러리. 건축 서점 병설</span> <a class="wl" href="https://jp.toto.com/gallerma/" target="_blank" rel="noopener">jp.toto.com/gallerma</a></li>
+            <li><a class="pl" href="https://www.karimoku.com/" target="_blank" rel="noopener">카리모쿠 리서치 센터</a> <span>— 목가구 브랜드의 리서치 전용 공간</span> <a class="wl" href="https://www.karimoku.com/" target="_blank" rel="noopener">karimoku.com</a></li>
+            <li><a class="pl" href="https://hidasangyo.com/" target="_blank" rel="noopener">HIDA 도쿄 미드타운점</a> <span>— 히다 지역 목공 가구</span> <a class="wl" href="https://hidasangyo.com/" target="_blank" rel="noopener">hidasangyo.com</a></li>
+          </ul>
+          <figure class="fig" style="margin:10px 0 2px"><img src="image/ma.jpg" alt="갤러리·마" loading="lazy" onerror="this.closest('figure').style.display='none'"></figure>
+          <div class="route"><span class="badges"><span class="bd e">E</span><span class="bd c">C</span></span>
+            <span>다이몬 → 오에도선 → 아오야마잇초메 → 도보 10분(또는 치요다선 노기자카). 시부야 집합은 노기자카 → 치요다선 → 오모테산도 → 긴자선 1정거장, 약 20분</span></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="stop">
+      <div class="stop-time">18:30</div>
+      <div class="stop-name">시부야 히카리에 <a class="pl" href="https://www.hikarie8.com/d47museum/" target="_blank" rel="noopener">d47 뮤지엄</a></div>
+      <p class="stop-desc">흩어졌던 하루를 여기서 다시 묶습니다. D&amp;DEPARTMENT가 47개 도도부현의 디자인을 수집·전시하는 곳으로, ‘로컬 리서치를 전시로 만드는 법’의 교과서. 전시실 하나 규모라 30분이면 충분하고, 일찍 도착한 팀은 18:00부터 먼저 관람해도 됩니다. 같은 8층의 전망 공간에서 <b>시부야 스크램블 교차로가 내려다보입니다</b> — 저녁 시간대라 교차로의 인파와 대형 스크린들이 가장 잘 보이는 때이기도 합니다. <a class="wl" href="https://www.hikarie8.com/d47museum/" target="_blank" rel="noopener">hikarie8.com/d47museum</a></p>
+      <figure class="fig"><img src="https://commons.wikimedia.org/wiki/Special:FilePath/Shibuya_Hikarie_Creative_Space_8_2013.JPG?width=1000" alt="시부야 히카리에 크리에이티브 스페이스 8/" loading="lazy" onerror="this.closest('figure').style.display='none'">
+      <figcaption>히카리에 8층 ‘크리에이티브 스페이스 8/’ — d47 뮤지엄이 있는 층. 사진: Wikimedia Commons</figcaption></figure>
+      <div class="exh">
+        <p><span class="t">NIPPON의 47인 2026 CULTURAL STAY — 47숙(宿)전</span> <span class="p">(9.18–11.29, 무휴 · 12:00–20:00 · 입장 도네이션제) — 제38회 기획전의 주제는 ‘숙소’. 자는 곳이던 숙소가 지역 문화의 체험·학습·교류가 일어나는 ‘활동의 장’으로 바뀌는 흐름 속에서, 47개 도도부현에서 한 명씩 그런 장소를 꾸리는 숙소의 주인(主)들을 소개합니다. 선정 기준 자체가 수업감 — 지역 문화를 공간·음식·프로그램으로 체감할 수 있고, 그 체험이 디자인 의식을 갖고 편집되어 있을 것. 47인의 에피소드를 4컷 만화로 풀고, 주인들이 고른 여행 도구를 파는 특설 숍과 팟캐스트 음성 가이드까지 — 전시·출판·상품·오디오로 하나의 리서치를 다층 전개하는 D&amp;DEPARTMENT 방법론의 실례입니다. <a class="wl" href="https://www.d-department.com/item/47CULTURALSTAY.html" target="_blank" rel="noopener">d-department.com</a></span></p>
+        <figure class="fig"><img src="https://media.d-department.com/wp/wp-content/uploads/2026/06/yado_image-980x490.jpg" alt="47숙전" loading="lazy" onerror="this.closest('figure').style.display='none'">
+        <figcaption>NIPPON의 47인 2026 CULTURAL STAY. 이미지: D&amp;DEPARTMENT 공식 사이트 (비공개 교육용 임시 링크)</figcaption></figure>
+      </div>
+    </div>
+
+    <div class="stop">
+      <div class="stop-time">19:00</div>
+      <div class="stop-name">저녁 — 시부야 (돈카츠 마이센, 히카리에)</div>
+      <p class="stop-desc">귀가: 시부야→롯폰기는 지하철 직통이 없어서 도에이버스 <b>도01(시부야역앞→신바시행)</b>이 정답 — 롯폰기역앞 하차, 약 20분. 늦어지면 JR 에비스 → 히비야선 → 롯폰기.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ======================= DAY 4 ======================= -->
+<section class="day" id="d4" style="--lc:var(--d4)">
+  <div class="day-head">
+    <span class="day-num" style="background:var(--d4)">Day 4</span>
+    <h2>10/2 금 — 롯폰기, 도쿄역, 귀국</h2>
+  </div>
+  <p class="day-sub">
+    마지막 날은 디자인 뮤지엄의 정석 코스. 특히 아티존의 소트사스전은 10/4 종료라 이 일정이 마지막 기회입니다.
+  </p>
+
+  <div class="line">
+    <div class="stop">
+      <div class="stop-time">09:00</div>
+      <div class="stop-name">호텔 로비 집합 — 짐 맡기기</div>
+    </div>
+    <div class="go"><span class="badges"><span class="bd walk">도보</span></span>
+      <span>호텔에서 도쿄 미드타운까지 도보 약 10분. 지하철 없이 걸어서 시작하는 날입니다.</span></div>
+
+    <div class="stop">
+      <div class="stop-time">10:00</div>
+      <div class="stop-name"><a class="pl" href="https://www.2121designsight.jp/" target="_blank" rel="noopener">21_21 DESIGN SIGHT</a></div>
+      <p class="stop-desc">미야케 잇세이·사토 타쿠·후카사와 나오토가 만들고 안도 다다오가 설계한 디자인 전문관. 지붕 한 장이 땅으로 접혀 들어가는 건물. <a class="wl" href="https://www.2121designsight.jp/" target="_blank" rel="noopener">2121designsight.jp</a></p>
+      <figure class="fig"><img src="https://commons.wikimedia.org/wiki/Special:FilePath/21_21_DESIGN_SIGHT_2018-1.jpg?width=1000" alt="21_21 디자인 사이트 외관" loading="lazy" onerror="this.closest('figure').style.display='none'">
+      <figcaption>21_21 DESIGN SIGHT — 안도 다다오. 전시 면적 대부분이 지하로 내려가 있습니다. 사진: Wikimedia Commons</figcaption></figure>
+      <div class="exh">
+        <p><span class="t">‘호조키’에서 배우다 — 삶을 다시 엮는 작은 건축</span> <span class="p">(8.28–2027.1.11) — 가모노 초메이의 방장(方丈) 오두막을 출발점으로 ‘최소한의 건축’을 다시 묻는 기획전. <a class="wl" href="https://www.2121designsight.jp/" target="_blank" rel="noopener">2121designsight.jp</a></span></p>
+        <figure class="fig"><img src="image/2121.webp" alt="‘호조키’에서 배우다 전시" loading="lazy" onerror="this.closest('figure').style.display='none'">
+        <figcaption>‘호조키’에서 배우다 — 삶을 다시 엮는 작은 건축</figcaption></figure>
+      </div>
+    </div>
+    <div class="go"><span class="badges"><span class="bd walk">도보</span></span><span>미드타운 → 국립신미술관 8분.</span></div>
+
+    <div class="stop">
+      <div class="stop-time">11:00</div>
+      <div class="stop-name"><a class="pl" href="https://www.nact.jp/" target="_blank" rel="noopener">국립신미술관</a></div>
+      <p class="stop-desc">구로카와 기쇼의 물결치는 유리 파사드. 자체 컬렉션이 없는 국립 아트센터라는 제도 실험이기도 합니다. 아트샵 SFT까지—건축과 샵 중심으로 짧게. <a class="wl" href="https://www.nact.jp/" target="_blank" rel="noopener">nact.jp</a></p>
+      <figure class="fig"><img src="https://commons.wikimedia.org/wiki/Special:FilePath/2018_National_Art_Center,_Tokyo.jpg?width=1000" alt="국립신미술관 유리 파사드" loading="lazy" onerror="this.closest('figure').style.display='none'">
+      <figcaption>국립신미술관 — 구로카와 기쇼의 마지막 미술관. 사진: Wikimedia Commons</figcaption></figure>
+    </div>
+
+    <div class="stop">
+      <div class="stop-time">12:00</div>
+      <div class="stop-name">점심 — 롯폰기</div>
+    </div>
+    <div class="go"><span class="badges"><span class="bd h">H</span><span class="bd g">G</span></span>
+      <span>롯폰기 → 히비야선 → 긴자 → 긴자선 1정거장 교바시, 하차 후 도보 1분. 약 25분.</span></div>
+
+    <div class="stop">
+      <div class="stop-time">14:00</div>
+      <div class="stop-name"><a class="pl" href="https://www.artizon.museum/" target="_blank" rel="noopener">아티존 뮤지엄</a></div>
+      <p class="stop-desc">브리지스톤 미술관을 2020년 전면 재개관한 사립관. <a class="wl" href="https://www.artizon.museum/" target="_blank" rel="noopener">artizon.museum</a></p>
+      <figure class="fig"><img src="https://commons.wikimedia.org/wiki/Special:FilePath/Artizon_Museum_lobby_view_201912.jpg?width=1000" alt="아티존 뮤지엄 로비" loading="lazy" onerror="this.closest('figure').style.display='none'">
+      <figcaption>아티존 뮤지엄 로비 — 뮤지엄 타워 교바시 저층부. 사진: Wikimedia Commons</figcaption></figure>
+      <div class="exh">
+        <p><span class="t">에토레 소트사스 — 디자인은 마법이 시작되는 곳에서 시작된다</span> <span class="p">(6.23–10.4) — 멤피스의 창시자. 올리베티 산업디자인부터 세라믹·유리까지. 이틀 뒤 폐막. <a class="wl" href="https://www.artizon.museum/" target="_blank" rel="noopener">artizon.museum</a></span></p>
+        <figure class="fig"><img src="image/sottsass.jpg" alt="에토레 소트사스전" loading="lazy" onerror="this.closest('figure').style.display='none'">
+        <figcaption>에토레 소트사스 — 디자인은 마법이 시작되는 곳에서 시작된다</figcaption></figure>
+      </div>
+    </div>
+    <div class="go"><span class="badges"><span class="bd walk">도보</span></span><span>교바시 → 도쿄역 마루노우치 남쪽 출구 앞 KITTE, 10분.</span></div>
+
+    <div class="stop">
+      <div class="stop-time">15:00</div>
+      <div class="stop-name">KITTE — <a class="pl" href="https://www.intermediatheque.jp/" target="_blank" rel="noopener">인터메디아테크</a></div>
+      <p class="stop-desc">옛 도쿄중앙우체국을 리노베이션한 JP타워 2·3층. 도쿄대 학술표본을 박물관 그래픽과 집기 디자인으로 다시 짠 무료 상설관. 표본 진열장 하나하나가 전시디자인 레퍼런스. <a class="wl" href="https://www.intermediatheque.jp/" target="_blank" rel="noopener">intermediatheque.jp</a></p>
+      <figure class="fig">
+      <img src="image/kitte.jpg" alt="KITTE 아트리움" loading="lazy" onerror="this.remove()">
+      <img src="image/inter.jpg" alt="인터메디아테크" loading="lazy" onerror="this.remove()">
+      <figcaption>KITTE 아트리움과 인터메디아테크</figcaption></figure>
+      <div class="alt-box">
+        <span class="alt-tag">검토 중 — 3일차 오전에 MoN Takanawa 대신 KITTE를 방문한다면</span>
+        <p><span class="p">3일차(10/1) 오전을 MoN 대신 도쿄역 일대로 잡는 안. 그 경우 도쿄역 반경 도보 5분에서 아래를 함께 보고, 4일차 오후는 아티존만 남습니다 — 남는 시간은 호텔 근처에서 선물·쇼핑 자유시간을 주거나 공항으로 일찍 출발하는 여유로 씁니다(17:00 출발의 빠듯함이 해소됩니다).</span></p>
+        <p><span class="t">도쿄역 마루노우치 역사 돔</span> <span class="p">— 다쓰노 긴고, 1914. 남쪽 돔 천장의 복원 부조. 역 구내라 상시·무료.</span></p>
+        <p><span class="t">도쿄 스테이션 갤러리 — 수호전(水滸傳)</span> <span class="p">(9.19–11.8, 10:00 개관) — 역사 벽돌 구조체 안의 갤러리. 우타가와 구니요시의 출세작 호걸 연작 현존 74매 일괄 공개. 소설→우키요에→만화·게임으로 이어지는 800년의 트랜스미디어 수용사. 일시 지정제 아님. <a class="wl" href="https://www.ejrcf.or.jp/gallery/" target="_blank" rel="noopener">ejrcf.or.jp/gallery</a></span></p>
+        <p><span class="t">GOOD DESIGN Marunouchi — 산수향의 디자인 6</span> <span class="p">(~10.11, 무료, 11:00~) — 굿디자인상 거점의 기획전. 지방·산간 지역에 뿌리내린 디자인의 미래 — 저녁 d47의 47숙전과 같은 ‘로컬×디자인’ 계열이라 하루 안에 비교 관람이 됩니다. 나카도리 도보 5분. <a class="wl" href="https://marunouchi.g-mark.org/" target="_blank" rel="noopener">marunouchi.g-mark.org</a></span></p>
+        <p><span class="t">KITTE 옥상정원 · 구 우체국장실</span> <span class="p">(11:00~, 무료) — 도쿄역 지붕과 플랫폼을 내려다보는 전망, 복원된 국장실의 프레임.</span></p>
+      </div>
+    </div>
+    <div class="go tmove">
+      <div class="stop-time">16:00</div>
+      <div class="go-row"><span class="badges"><span class="bd m">M</span><span class="bd h">H</span></span>
+      <span>도쿄역 → 마루노우치선 → 가스미가세키(같은 승강장급 환승) → 히비야선 → 롯폰기. 약 25분. 16:30 호텔에서 짐 찾기.</span></div>
+    </div>
+
+    <div class="stop">
+      <div class="stop-time">17:00</div>
+      <div class="stop-name">공항으로 출발</div>
+      <p class="stop-desc">첫날의 역순 그대로: 롯폰기 → 오에도선 → 다이몬 → 도보 4분 하마마쓰초 → 도쿄 모노레일 → 하네다 T3. 약 40분, 환승 1회. 하마마쓰초 환승 통로가 캐리어 끌기에 무난하지만, 퇴근 시간대라 다이몬 구간이 붐빌 수 있으니 17:00 정시 출발을 지킬 것.</p>
+    </div>
+
+    <div class="stop">
+      <div class="stop-time">18:00 – 22:15</div>
+      <div class="stop-name">하네다 T3 — 김포</div>
+      <p class="stop-desc">저녁은 공항에서. 19:55 출발, 22:15 김포 도착.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ======================= NOTES ======================= -->
+<div class="notes">
+  <h3>공통 메모</h3>
+  <ul>
+    <li><b>교통카드</b> <span>— 첫날 하네다에서 Suica/PASMO(모바일 가능) 준비. 이 일정의 모든 대중교통을 카드 하나로 탑니다.</span></li>
+    <li><b>예약이 필요한 곳</b> <span>— teamLab Borderless(시간 지정), 네즈미술관(온라인 날짜·시간 지정, A트랙 인원 확정 후 14:00–15:00 슬롯 구매), 텐도목코 쇼룸(견학 예약제). 모두 사전 확정 필수이며 네즈는 구매 후 변경·취소가 안 됩니다.</span></li>
+    <li><b>마감이 빠른 곳</b> <span>— 폴라 뮤지엄 아넥스 입장 18:30, 텐도목코 17:00, ICC·무사비 미술관 18:00. 오후 동선은 이 시간부터 역산.</span></li>
+    <li><b>휴관 확인</b> <span>— 무사비 미술관은 일·공휴일 휴관(9/30 수 정상), 텐도목코는 수요일 휴무라 화요일(9/29) 개인 방문으로 배치. 소트사스전은 10/4 종료.</span></li>
+    <li><b>도01 버스</b> <span>— 시부야역앞과 롯폰기역앞을 직통으로 잇는 도에이버스. 시부야↔숙소는 지하철 직통이 없어서, 시부야 쪽 일정의 복귀는 이 버스가 가장 편합니다.</span></li>
+    <li><b>기준 역</b> <span>— 모든 동선은 롯폰기역(히비야선 H04 · 오에도선 E23) 기준. 긴자·에비스 방면은 히비야선, 신주쿠와 다이몬(공항 모노레일 환승) 방면은 오에도선으로 기억하면 헷갈리지 않습니다.</span></li>
+  </ul>
+</div>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="route-strip" aria-hidden="true">
+      <span style="background:var(--d1)"></span><span style="background:var(--d2)"></span>
+      <span style="background:var(--d3)"></span><span style="background:var(--d4)"></span>
+    </div>
+    Inspiration Tour Tokyo 2026 — 운행 시간과 전시 일정은 출발 전 각 기관 공식 사이트에서 최종 확인하세요.
+    사진은 Wikimedia Commons의 자유 라이선스(CC) 이미지를 기본으로 하고, 일부는 각 기관 공식 사이트의 이미지를 직접 링크했습니다(수강생 공유용 비공개 페이지 한정, 외부 공개·재배포 금지).
+  </div>
+</footer>
+
+<script>
+document.querySelectorAll('.map-legend span[data-day]').forEach(function(el){
+  function toggle(){
+    var box=document.getElementById('mapbox');
+    var cur=box.getAttribute('data-f');
+    document.querySelectorAll('.map-legend span[data-day]').forEach(function(s){s.classList.remove('on')});
+    if(cur===el.dataset.day){box.removeAttribute('data-f');}
+    else{box.setAttribute('data-f',el.dataset.day);el.classList.add('on');}
+  }
+  el.addEventListener('click',toggle);
+  el.addEventListener('keydown',function(e){if(e.key==='Enter'||e.key===' '){e.preventDefault();toggle();}});
+});
+</script>
+</body>
+</html>
