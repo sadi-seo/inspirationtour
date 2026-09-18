@@ -126,6 +126,41 @@
       max-width: 56ch
     }
 
+    .rules {
+      margin-top: 28px;
+      border: 1px solid var(--hair);
+      border-radius: 10px;
+      padding: 14px 18px 8px;
+      background: var(--card);
+      max-width: 62ch
+    }
+
+    .rules-title {
+      font-size: 13px;
+      font-weight: 800;
+      letter-spacing: .05em;
+      margin-bottom: 4px
+    }
+
+    .rules ul {
+      list-style: none
+    }
+
+    .rules li {
+      font-size: 13.5px;
+      padding: 8px 0;
+      border-top: 1px dashed var(--hair);
+      color: var(--ink)
+    }
+
+    .rules li:first-child {
+      border-top: none
+    }
+
+    .rules li span {
+      color: var(--muted)
+    }
+
     .header-meta strong {
       color: var(--ink);
       font-weight: 600
@@ -1029,6 +1064,16 @@
         <span style="background:var(--d1)"></span><span style="background:var(--d2)"></span>
         <span style="background:var(--d3)"></span><span style="background:var(--d4)"></span>
       </div>
+      <div class="rules">
+        <div class="rules-title">이동 수칙</div>
+        <ul>
+          <li>모든 이동은 반드시 <b>2인 이상</b>으로.</li>
+          <li>트랙별 관람 중에는 단체 카톡방에 메시지를 남기거나, 서로 볼 수 있도록 촬영한 사진을 업로드.</li>
+          <li>폰이 꺼지거나 일행과 떨어지면, <b>그날 공지된 집합 장소로 이동해 대기</b>.</li>
+          <li>집합 시각 <b>10분 전 도착</b> 기준. 늦어질 것 같으면 그 시점에 바로 단체방에.</li>
+          <li>보조배터리 필수 지참 · 여권은 원본 휴대 · 긴급 신고 — <b>경찰 110 · 구급 119</b></li>
+        </ul>
+      </div>
     </div>
   </header>
 
@@ -1047,8 +1092,6 @@
     <!-- ======================= MAP ======================= -->
     <section class="mapsec" id="map">
       <h2>전체 지도</h2>
-      <p class="day-sub">실제 위치 좌표로 그린 지도입니다. 검은 네모가 숙소, 굵은 선은 날짜별 이동 축이고, 방향을 잡기 쉽게 도쿄만·황거·요요기공원·야마노테선·도쿄타워를 함께 그렸습니다.
-        요코하마와 하네다만 빼면 전부 반경 5km 안입니다.</p>
       <div class="mapbox" id="mapbox">
         <div class="maplayer">
           <svg viewBox="0 0 720 540" role="img" aria-label="방문지 전체 위치 지도" font-family="inherit">
@@ -1169,7 +1212,7 @@
         <div class="stop">
           <div class="stop-time">07:00 – 11:20</div>
           <div class="stop-name">김포 → 하네다</div>
-          <p class="stop-desc">07:00 김포공항 집합, 09:00 출발, 11:20 하네다 T3 도착.</p>
+          <p class="stop-desc">07:00 김포공항 집합, 09:00 출발, 11:20 하네다 T3 도착. 도착 로비에서 Welcome Suica 구매 진행(창구 또는 발매기 — 둘 다 2층 모노레일 개찰 옆).</p>
         </div>
         <div class="go"><span class="badges"><span class="bd mo">모노</span><span class="bd e">E</span></span>
           <span>하네다 T3 → 도쿄 모노레일(공항쾌속 약 13분) → 하마마쓰초 → 도보 4분 다이몬역 → 오에도선 → 롯폰기. 약 40분, 환승 1회. 롯폰기역에서 호텔까지 도보 5분.</span>
