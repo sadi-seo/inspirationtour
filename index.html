@@ -126,41 +126,6 @@
       max-width: 56ch
     }
 
-    .rules {
-      margin-top: 28px;
-      border: 1px solid var(--hair);
-      border-radius: 10px;
-      padding: 14px 18px 8px;
-      background: var(--card);
-      max-width: 62ch
-    }
-
-    .rules-title {
-      font-size: 13px;
-      font-weight: 800;
-      letter-spacing: .05em;
-      margin-bottom: 4px
-    }
-
-    .rules ul {
-      list-style: none
-    }
-
-    .rules li {
-      font-size: 13.5px;
-      padding: 8px 0;
-      border-top: 1px dashed var(--hair);
-      color: var(--ink)
-    }
-
-    .rules li:first-child {
-      border-top: none
-    }
-
-    .rules li span {
-      color: var(--muted)
-    }
-
     .header-meta strong {
       color: var(--ink);
       font-weight: 600
@@ -715,109 +680,6 @@
       align-items: flex-start
     }
 
-    /* ---------- day flow map (split → merge) ---------- */
-    .flowmap-wrap {
-      margin: 18px 0 6px;
-      overflow-x: auto
-    }
-
-    .flowmap {
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      min-width: 560px;
-      border: 1px solid var(--hair);
-      border-radius: 10px;
-      overflow: hidden;
-      background: var(--card);
-      font-size: 12.5px;
-      line-height: 1.45
-    }
-
-    .fm-full {
-      grid-column: 1/-1;
-      padding: 10px 14px;
-      background: var(--paper);
-      font-weight: 700
-    }
-
-    .fm-full small {
-      display: block;
-      font-weight: 400;
-      color: var(--muted);
-      font-size: 11.5px
-    }
-
-    .fm-full.fm-top {
-      border-bottom: 2px solid var(--lc)
-    }
-
-    .fm-full.fm-merge {
-      border-top: 2px solid var(--lc)
-    }
-
-    .fm-full.fm-end {
-      border-top: 1px solid var(--hair)
-    }
-
-    .fm-col {
-      display: flex;
-      flex-direction: column
-    }
-
-    .fm-col+.fm-col {
-      border-left: 1px solid var(--hair)
-    }
-
-    .fm-t {
-      padding: 8px 10px 7px;
-      font-weight: 700;
-      border-bottom: 1px solid var(--hair);
-      background: color-mix(in srgb, var(--lc) 6%, var(--card))
-    }
-
-    .fm-t small {
-      display: block;
-      font-weight: 400;
-      color: var(--muted);
-      font-size: 11px
-    }
-
-    .fm-c {
-      padding: 7px 10px;
-      border-bottom: 1px dashed var(--hair)
-    }
-
-    .fm-c:last-child {
-      border-bottom: none
-    }
-
-    .fm-c.opt {
-      color: var(--muted)
-    }
-
-    .fm-c b {
-      font-weight: 700
-    }
-
-    .fm-col.span2 {
-      grid-row: span 2
-    }
-
-    .fm-band {
-      grid-column: 1/4;
-      padding: 9px 12px;
-      border-top: 2px solid var(--lc);
-      background: color-mix(in srgb, var(--lc) 6%, var(--card));
-      font-weight: 700
-    }
-
-    .fm-band small {
-      display: block;
-      font-weight: 400;
-      color: var(--muted);
-      font-size: 11px
-    }
-
     /* ---------- figures ---------- */
     .fig {
       margin: 14px 0 4px;
@@ -1064,16 +926,10 @@
         <span style="background:var(--d1)"></span><span style="background:var(--d2)"></span>
         <span style="background:var(--d3)"></span><span style="background:var(--d4)"></span>
       </div>
-      <div class="rules">
-        <div class="rules-title">이동 수칙</div>
-        <ul>
-          <li>모든 이동은 반드시 <b>2인 이상</b>으로.</li>
-          <li>트랙별 관람 중에는 단체 카톡방에 메시지를 남기거나, 서로 볼 수 있도록 촬영한 사진을 업로드.</li>
-          <li>폰이 꺼지거나 일행과 떨어지면, <b>그날 공지된 집합 장소로 이동해 대기</b>.</li>
-          <li>집합 시각 <b>10분 전 도착</b> 기준. 늦어질 것 같으면 그 시점에 바로 단체방에.</li>
-          <li>보조배터리 필수 지참 · 여권은 원본 휴대 · 긴급 신고 — <b>경찰 110 · 구급 119</b></li>
-        </ul>
-      </div>
+      <p class="header-meta">
+        매일 하나의 지역을 축으로 움직이고, 오후에는 관심사에 따라 트랙을 골라 흩어졌다가 저녁에 다시 모입니다.
+        아래 각 날짜의 세로 선은 그날의 실제 이동 축이 되는 노선 색입니다.
+      </p>
     </div>
   </header>
 
@@ -1082,7 +938,7 @@
       <a href="#map"><b style="background:var(--ink)"></b>전체 지도</a>
       <a href="#d1"><b style="background:var(--d1)"></b>9/29 긴자</a>
       <a href="#d2"><b style="background:var(--d2)"></b>9/30 아자부다이 · 요코하마</a>
-      <a href="#d3"><b style="background:var(--d3)"></b>10/1 타카나와 · 아오야마</a>
+      <a href="#d3"><b style="background:var(--d3)"></b>10/1 타카나와/도쿄역 · 아오야마</a>
       <a href="#d4"><b style="background:var(--d4)"></b>10/2 롯폰기 · 교바시</a>
     </div>
   </nav>
@@ -1092,6 +948,8 @@
     <!-- ======================= MAP ======================= -->
     <section class="mapsec" id="map">
       <h2>전체 지도</h2>
+      <p class="day-sub">실제 위치 좌표로 그린 지도입니다. 검은 네모가 숙소, 굵은 선은 날짜별 이동 축이고, 방향을 잡기 쉽게 도쿄만·황거·요요기공원·야마노테선·도쿄타워를 함께 그렸습니다.
+        요코하마와 하네다만 빼면 전부 반경 5km 안입니다.</p>
       <div class="mapbox" id="mapbox">
         <div class="maplayer">
           <svg viewBox="0 0 720 540" role="img" aria-label="방문지 전체 위치 지도" font-family="inherit">
@@ -1129,6 +987,8 @@
               opacity=".28" />
             <polyline class="dg d3" points="100,171 347,274" fill="none" stroke="var(--d3)" stroke-width="2"
               stroke-dasharray="5 5" opacity=".22" />
+            <polyline class="dg d3" points="347,274 519,176" fill="none" stroke="var(--d3)" stroke-width="2"
+              stroke-dasharray="5 5" opacity=".3" />
             <polyline class="dg d4" points="347,274 338,247 313,262 545,198" fill="none" stroke="var(--d4)"
               stroke-width="3" opacity=".28" />
             <polyline class="dg d1 d4" points="387,412 430,505" fill="none" stroke="#9a9a92" stroke-width="2"
@@ -1152,8 +1012,7 @@
             <g class="dg d2">
               <circle cx="386" cy="286" r="7" fill="var(--d2)" />
               <text x="397" y="290" font-size="11" fill="var(--ink)">아자부다이힐즈 — 팀랩 · 갤러리 · 파미마</text>
-              <a href="#map-yokohama"><text x="60" y="522" font-size="11" fill="var(--muted)"
-                  text-decoration="underline">◀ 요코하마 미나토미라이 (도요코선 특급 약 50분, 남서쪽 — Day 2 요코하마 지도)</text></a>
+              <text x="60" y="522" font-size="11" fill="var(--muted)">◀ 요코하마 미나토미라이 (도요코선 특급 약 50분, 남서쪽)</text>
             </g>
 
             <!-- day3 -->
@@ -1163,10 +1022,11 @@
               <circle cx="238" cy="259" r="7" fill="var(--d3)" />
               <text x="230" y="255" font-size="11" fill="var(--ink)" text-anchor="end">아오야마 — 요지 · 서점 · 파피에</text>
               <circle cx="311" cy="250" r="5.5" fill="var(--d3)" />
-              <text x="303" y="240" font-size="11" fill="var(--ink)" text-anchor="end">갤러리·마 · 카리모쿠 · HIDA
-                (건축·가구)</text>
+              <text x="303" y="240" font-size="11" fill="var(--ink)" text-anchor="end">갤러리·마 · 카리모쿠 (노기자카)</text>
               <circle cx="387" cy="412" r="7" fill="var(--d3)" />
-              <text x="399" y="416" font-size="11" fill="var(--ink)">MoN 타카나와</text>
+              <text x="399" y="416" font-size="11" fill="var(--ink)">MoN 타카나와 (옵션 A)</text>
+              <circle cx="519" cy="176" r="7" fill="var(--d3)" />
+              <text x="512" y="166" font-size="11" fill="var(--ink)" text-anchor="end">도쿄역 · KITTE (옵션 B)</text>
               <circle cx="193" cy="294" r="7" fill="var(--d3)" />
               <text x="185" y="313" font-size="11" fill="var(--ink)">시부야 — d47 뮤지엄</text>
               <circle cx="100" cy="171" r="5.5" fill="var(--d3)" />
@@ -1191,7 +1051,7 @@
         <div class="map-legend">
           <span data-day="d1" role="button" tabindex="0"><i style="background:var(--d1)"></i>9/29 긴자</span>
           <span data-day="d2" role="button" tabindex="0"><i style="background:var(--d2)"></i>9/30 아자부다이 · 요코하마</span>
-          <span data-day="d3" role="button" tabindex="0"><i style="background:var(--d3)"></i>10/1 타카나와 · 아오야마 ·
+          <span data-day="d3" role="button" tabindex="0"><i style="background:var(--d3)"></i>10/1 타카나와/도쿄역 · 아오야마 ·
             시부야</span>
           <span data-day="d4" role="button" tabindex="0"><i style="background:var(--d4)"></i>10/2 롯폰기 · 교바시</span>
           <span class="hint">날짜를 누르면 그날 동선만 표시 · 다시 누르면 전체</span>
@@ -1206,7 +1066,7 @@
         <h2>9/29 화 — 도착, 그리고 긴자</h2>
       </div>
       <p class="day-sub">
-        긴자는 기업이 문화 공간을 자기 브랜드의 얼굴로 운영하는 방식—DNP의 ggg, 폴라의 아넥스, 소니의 파크, 에르메스의 포럼—을 반나절 도보권 안에서
+        이동일이지만 오후를 통째로 긴자에 씁니다. 긴자는 기업이 문화 공간을 자기 브랜드의 얼굴로 운영하는 방식—DNP의 ggg, 폴라의 아넥스, 소니의 파크, 에르메스의 포럼—을 반나절 도보권 안에서
         비교해볼 수 있는 동네입니다.
       </p>
 
@@ -1214,8 +1074,7 @@
         <div class="stop">
           <div class="stop-time">07:00 – 11:20</div>
           <div class="stop-name">김포 → 하네다</div>
-          <p class="stop-desc">07:00 김포공항 집합, 09:00 출발, 11:20 하네다 T3 도착. 도착 로비에서 Welcome Suica 구매 진행(창구 또는 발매기 — 둘 다 2층
-            모노레일 개찰 옆).</p>
+          <p class="stop-desc">07:00 김포공항 집합, 09:00 출발, 11:20 하네다 T3 도착.</p>
         </div>
         <div class="go"><span class="badges"><span class="bd mo">모노</span><span class="bd e">E</span></span>
           <span>하네다 T3 → 도쿄 모노레일(공항쾌속 약 13분) → 하마마쓰초 → 도보 4분 다이몬역 → 오에도선 → 롯폰기. 약 40분, 환승 1회. 롯폰기역에서 호텔까지 도보 5분.</span>
@@ -1225,7 +1084,7 @@
           <div class="stop-time">13:00</div>
           <div class="stop-name">숙소 — <a class="pl" href="https://sotetsu-hotels.com/fresa-inn/tokyo-roppongi/"
               target="_blank" rel="noopener">소테츠 프레사 인 도쿄 롯폰기</a> (짐 맡기기)</div>
-          <p class="stop-desc">롯폰기 3초메. 히비야선·오에도선 롯폰기역 도보 5분, 아자부다이힐즈 도보 13분. 체크인 전이니
+          <p class="stop-desc">롯폰기 3초메. 히비야선·오에도선 롯폰기역 도보 5분, 아자부다이힐즈 도보 13분 — 이 위치 덕에 이번 일정 대부분이 환승 0–1회로 끝납니다. 체크인 전이니
             짐만 맡기고 바로 점심으로. <a class="wl" href="https://sotetsu-hotels.com/fresa-inn/tokyo-roppongi/" target="_blank"
               rel="noopener">sotetsu-hotels.com</a></p>
           <figure class="fig"><img
@@ -1244,14 +1103,14 @@
           <p class="stop-desc">카이센동 한 그릇에 줄 서는 집. 웨이팅이 길면 도쿄 미드타운 식당가로 대체.</p>
         </div>
         <div class="go"><span class="badges"><span class="bd h">H</span><span class="bd e">E</span></span>
-          <span>A트랙은 롯폰기 → 히비야선 → 긴자, 환승 없이 약 15분. B트랙은 롯폰기 → 오에도선 → 다이몬, 약 8분.</span>
+          <span>A트랙은 롯폰기 → 히비야선 → 긴자, 환승 없이 약 15분 — 이 직통이 숙소 위치의 가장 큰 장점입니다. B트랙은 롯폰기 → 오에도선 → 다이몬, 약 8분.</span>
         </div>
 
         <div class="stop">
           <div class="stop-time">15:00 –</div>
           <div class="stop-name">오후 트랙 탐방 — 2갈래</div>
           <p class="track-label"><i></i>A. 긴자 트랙</p>
-          <p class="stop-desc">긴자 1초메에서 남쪽으로 내려오는 도보 코스. 입장 마감이 가장 빠른
+          <p class="stop-desc">긴자 1초메에서 남쪽으로 내려오는 도보 코스로 순서를 잡았습니다. 가까운 곳끼리 묶으면서 마감 시간과도 맞아떨어지는 순서 — 입장 마감이 가장 빠른
             폴라(18:30)에서 시작해 가장 늦게 닫는 츠타야(21:00)에서 끝납니다. 관심 없는 곳은 건너뛰어도 동선은 그대로 유지됩니다.</p>
           <div class="mapbox mini">
             <svg viewBox="0 0 720 420" role="img" aria-label="긴자 트랙 도보 지도" font-family="inherit">
@@ -1361,7 +1220,7 @@
           </ol>
           <p class="track-label"><i></i>B. 텐도목코 트랙</p>
           <p class="stop-desc"><a class="pl" href="https://www.tendo-mokko.co.jp/" target="_blank" rel="noopener">텐도목코
-              쇼룸</a>(하마마쓰초) — 야나기 소리 버터플라이 스툴을 만든 성형합판 가구의 본가. 견학 예약제, 17:00까지, 화요일 정상 영업. 다이몬역에서 도보 3분이라 숙소에서 가장 빨리 닿는
+              쇼룸</a>(하마마쓰초) — 야나기 소리 버터플라이 스툴을 만든 성형합판 가구의 본가. 쇼룸 관람은 예약 불요(안내 견학만 예약제), 17:00까지, 화요일 정상 영업. 다이몬역에서 도보 3분이라 숙소에서 가장 빨리 닿는
             트랙입니다. 관람 후 아사쿠사선 다이몬 → 히가시긴자 약 8분으로 이동해 16시대에 A트랙 코스에 합류 — 마감이 늦은 곳들(이토야·DSM·츠타야)은 그때부터도 충분히 돌 수 있습니다. <a
               class="wl" href="https://www.tendo-mokko.co.jp/" target="_blank" rel="noopener">tendo-mokko.co.jp</a></p>
           <figure class="fig"><img src="image/tendo.jpg" alt="텐도목코 쇼룸" loading="lazy"
@@ -1385,8 +1244,7 @@
         <h2>9/30 수 — 아자부다이힐즈, 요코하마</h2>
       </div>
       <p class="day-sub">
-        오전은 초고층 개발지의 몰입형 미디어아트, 오후는 항구 도시의 리노베이션 지구. 자본이 만드는 무경계의 스펙터클과, 보존·재생이 만드는 장소의 경험을
-        하루 안에서 비교하게 됩니다. 마무리는 오산바시 데크의 야경.
+        오전은 초고층 개발지의 몰입형 미디어아트, 오후는 항구 도시의 리노베이션 지구. 같은 날에 두 극단을 붙여 놓은 이유가 있습니다 — 자본이 만드는 무경계의 스펙터클과, 보존·재생이 만드는 장소의 경험을 하루 안에서 비교하게 됩니다. 마무리는 오산바시 데크의 야경.
       </p>
 
       <div class="line">
@@ -1463,13 +1321,7 @@
         <div class="stop">
           <div class="stop-time">11:45</div>
           <div class="stop-name">점심 — 아자부다이힐즈</div>
-          <p class="stop-desc">위가 통째로 오피스 타워라 평일 12–13시가 직장인 피크 — 15분 먼저 들어가는 것만으로 체감 붐빔이 완전히 달라집니다. 예산 2–3천 엔 기준 1순위는
-            지하 1층 아자부다이힐즈 마켓 — 34개 전문점이 한 층의 시장 홀에 모인 국내 최대급 푸드마켓으로, 이트인 좌석은 점포마다 딸려 있어 메뉴별로 팀을 나눠 각자 줄 서서 먹는 방식입니다(예:
-            파라 야자와의 와규 함박, 중화 구이 덮밥, 토요스 직송 선어점, COMME’N 베이커리 — 대체로 1–2천 엔대). 매장 간 거리는 끝에서 끝까지 1–2분이라 흩어져도 서로 보이는 범위이고,
-            식후 재집합 장소만 하나 정해두면 됩니다. 예약 없이 유연하고 팀랩에서 동선도 가장 가깝습니다. 여유 있게 앉고 싶으면 <a class="pl"
-              href="https://balconyby6th.com/" target="_blank" rel="noopener">Balcony by 6th</a>(타워 플라자 3층, 구 6th by
-            ORIENTAL HOTEL) — 135석 올데이 다이닝이라 4–5명씩 나눠 앉기 좋고 예약도 되지만, 단품 2천 엔대 + 1인 1드링크제라 실질 1인 2,500–3,500엔으로 예산 상단을
-            칩니다.</p>
+          <p class="stop-desc">위가 통째로 오피스 타워라 평일 12–13시가 직장인 피크 — 15분 먼저 들어가는 것만으로 체감 붐빔이 완전히 달라집니다. 예산 2–3천 엔 기준 1순위는 지하 1층 아자부다이힐즈 마켓 — 34개 전문점이 한 층의 시장 홀에 모인 국내 최대급 푸드마켓으로, 이트인 좌석은 점포마다 딸려 있어 메뉴별로 팀을 나눠 각자 줄 서서 먹는 방식입니다(예: 파라 야자와의 와규 함박, 중화 구이 덮밥, 토요스 직송 선어점, COMME’N 베이커리 — 대체로 1–2천 엔대). 매장 간 거리는 끝에서 끝까지 1–2분이라 흩어져도 서로 보이는 범위이고, 식후 재집합 장소만 하나 정해두면 됩니다. 예약 없이 유연하고 팀랩에서 동선도 가장 가깝습니다. 여유 있게 앉고 싶으면 <a class="pl" href="https://balconyby6th.com/" target="_blank" rel="noopener">Balcony by 6th</a>(타워 플라자 3층, 구 6th by ORIENTAL HOTEL) — 135석 올데이 다이닝이라 4–5명씩 나눠 앉기 좋고 예약도 되지만, 단품 2천 엔대 + 1인 1드링크제라 실질 1인 2,500–3,500엔으로 예산 상단을 칩니다.</p>
         </div>
         <div class="go tmove">
           <div class="stop-time">14:00</div>
@@ -1478,161 +1330,71 @@
           </div>
         </div>
 
-        <div class="mapbox mini" id="map-yokohama">
-          <svg viewBox="0 0 720 570" role="img" aria-label="요코하마 도보 지도" font-family="inherit">
-            <g aria-hidden="true">
-              <polygon
-                points="300,0 720,0 720,570 610,570 600,500 560,470 540,440 506,398 482,336 336,330 314,296 314,214 336,192 328,146 318,76"
-                fill="#dfe8ec" />
-              <text x="628" y="120" font-size="10" fill="#a8bcc4">요코하마항</text>
-              <rect x="330" y="203" width="162" height="114" rx="26" fill="#ffffff" />
-              <text x="346" y="308" font-size="9.5" fill="#b3b3aa">신코지구</text>
-              <line x1="490" y1="436" x2="580" y2="362" stroke="#ffffff" stroke-width="22" stroke-linecap="round" />
-              <rect x="156" y="198" width="36" height="54" rx="13" fill="#e5ecdf" />
-              <rect x="236" y="96" width="52" height="40" rx="15" fill="#e5ecdf" />
-              <text x="242" y="90" font-size="9.5" fill="#a9b8a0">린코파크</text>
-              <rect x="524" y="478" width="62" height="20" rx="8" fill="#e5ecdf" />
-              <text x="518" y="474" font-size="9.5" fill="#a9b8a0">야마시타공원</text>
-              <polyline points="130,45 240,175 294,368 454,442 540,498 588,558" fill="none" stroke="#d4d4cb"
-                stroke-width="3" opacity=".9" />
-              <text x="286" y="300" font-size="9.5" fill="#b3b3aa" transform="rotate(74 286 300)">미나토미라이선</text>
-              <polyline points="70,30 150,190 214,344 316,528" fill="none" stroke="#d4d4cb" stroke-width="2"
-                stroke-dasharray="4 4" opacity=".7" />
-              <circle cx="214" cy="344" r="4.5" fill="#9a9a92" />
-              <text x="204" y="340" font-size="10.5" fill="var(--muted)" text-anchor="end">사쿠라기초역 (JR)</text>
-              <text x="60" y="22" font-size="11" fill="var(--muted)">▲ 도쿄 롯폰기 방면 (도요코선 특급 직통 약 50분)</text>
-            </g>
-
-            <!-- 이동 축: 도착·귀가(점선 = 전철) + 도보(실선) -->
-            <polyline points="130,45 240,175" fill="none" stroke="var(--d2)" stroke-width="2" stroke-dasharray="5 5"
-              opacity=".3" />
-            <polyline
-              points="198,190 240,182 262,216 310,246 368,240 444,302 474,378 484,522 528,466 536,400 492,434 458,440"
-              fill="none" stroke="var(--d2)" stroke-width="3" opacity=".35" />
-            <polyline points="454,442 294,368" fill="none" stroke="var(--d2)" stroke-width="2" stroke-dasharray="5 5"
-              opacity=".22" />
-            <text x="252" y="252" font-size="10.5" fill="var(--muted)" transform="rotate(28 252 252)">키샤미치 산책로</text>
-
-            <!-- stops -->
-            <circle cx="240" cy="175" r="4.5" fill="#9a9a92" />
-            <text x="252" y="172" font-size="10.5" fill="var(--muted)">미나토미라이역 — 도착</text>
-            <circle cx="198" cy="184" r="10" fill="var(--d2)" /><text x="198" y="188" font-size="11" font-weight="800"
-              fill="#fff" text-anchor="middle">1</text>
-            <text x="183" y="188" font-size="11" fill="var(--ink)" text-anchor="end">요코하마미술관</text>
-            <circle cx="368" cy="233" r="10" fill="var(--d2)" /><text x="368" y="237" font-size="11" font-weight="800"
-              fill="#fff" text-anchor="middle">2</text>
-            <text x="383" y="237" font-size="11" fill="var(--ink)">컵누들 뮤지엄</text>
-            <circle cx="444" cy="297" r="4.5" fill="none" stroke="var(--d2)" stroke-width="2.5" />
-            <text x="453" y="301" font-size="10.5" fill="var(--muted)">아카렌가 창고 (경유)</text>
-            <circle cx="474" cy="378" r="4.5" fill="none" stroke="var(--d2)" stroke-width="2.5" />
-            <text x="465" y="382" font-size="10.5" fill="var(--muted)" text-anchor="end">조노하나 테라스 (경유)</text>
-            <circle cx="486" cy="528" r="10" fill="var(--d2)" /><text x="486" y="532" font-size="11" font-weight="800"
-              fill="#fff" text-anchor="middle">3</text>
-            <text x="470" y="532" font-size="11" fill="var(--ink)" text-anchor="end">차이나타운 — 저녁</text>
-            <circle cx="536" cy="395" r="10" fill="var(--d2)" /><text x="536" y="399" font-size="11" font-weight="800"
-              fill="#fff" text-anchor="middle">4</text>
-            <text x="551" y="399" font-size="11" fill="var(--ink)">오산바시 — 야경</text>
-            <circle cx="454" cy="442" r="4.5" fill="#9a9a92" />
-            <text x="444" y="456" font-size="10.5" fill="var(--muted)" text-anchor="end">니혼오도리역 — 귀갓길</text>
-          </svg>
-        </div>
         <div class="stop">
           <div class="stop-time">15:00 – 16:00</div>
-          <div class="stop-name"><a class="pl" href="https://yokohama.art.museum/" target="_blank"
-              rel="noopener">요코하마미술관</a></div>
-          <p class="stop-desc">단게 겐조 설계(1989), 2024년 리뉴얼 재개관. 좌우로 뻗은 대칭 파사드와 계단식 대공간 ‘그랜드 갤러리’는 지나가며 보는 것으로 충분하고, 한 시간을
-            모리 유코전에 집중합니다. 전시가 열리는 신설 ‘갤러리 9’은 유리로 둘러싸여 앞 공원의 빛과 풍경이 작품과 호응하는 공간으로, <b>관람 무료</b> — 예매·발권 절차가 없습니다. <a
-              class="wl" href="https://yokohama.art.museum/" target="_blank" rel="noopener">yokohama.art.museum</a></p>
-
-          <figure class="fig"><img src="image/yoko.jpg" alt="요코하마미술관" loading="lazy"
-              onerror="this.closest('figure').style.display='none'">
-            <figcaption>요코하마미술관 — 단게 겐조</figcaption>
-          </figure>
-
+          <div class="stop-name"><a class="pl" href="https://yokohama.art.museum/" target="_blank" rel="noopener">요코하마미술관</a></div>
+          <p class="stop-desc">단게 겐조 설계(1989), 2024년 리뉴얼 재개관. 좌우로 뻗은 대칭 파사드와 계단식 대공간 ‘그랜드 갤러리’는 지나가며 보는 것으로 충분하고, 한 시간을 모리 유코전에 집중합니다. 전시가 열리는 신설 ‘갤러리 9’은 유리로 둘러싸여 앞 공원의 빛과 풍경이 작품과 호응하는 공간으로, <b>관람 무료</b> — 예매·발권 절차가 없습니다. <a class="wl" href="https://yokohama.art.museum/" target="_blank" rel="noopener">yokohama.art.museum</a></p>
           <div class="exh">
-            <p><span class="t">모리 유코 개인전</span> <span class="p">(7.24–11.23) — 2024년 베네치아 비엔날레 일본관에서 화제를 모은 ‘Compose’의
-                귀환·재구축전. 일용품·자연물·기기를 매개로 불규칙한 움직임과 빛, 소리를 만들어내는 인스탈레이션 작품군 — 키네틱·사운드 설치의 현재를 보여주는 전시입니다.</span></p>
-            <figure class="fig"><img src="image/mori.jpg" alt="모리 유코전" loading="lazy"
-                onerror="this.closest('figure').style.display='none'">
+            <p><span class="t">모리 유코 개인전</span> <span class="p">(7.24–11.23) — 2024년 베네치아 비엔날레 일본관에서 화제를 모은 ‘Compose’의 귀환·재구축전. 일용품·자연물·기기를 매개로 불규칙한 움직임과 빛, 소리를 만들어내는 인스탈레이션 작품군 — 키네틱·사운드 설치의 현재를 보여주는 전시입니다.</span></p>
+            <figure class="fig"><img src="image/mori.jpg" alt="모리 유코전" loading="lazy" onerror="this.closest('figure').style.display='none'">
               <figcaption>모리 유코 개인전 — 요코하마미술관</figcaption>
             </figure>
           </div>
-
+          <figure class="fig"><img src="image/yoko.jpg" alt="요코하마미술관" loading="lazy" onerror="this.closest('figure').style.display='none'">
+            <figcaption>요코하마미술관 — 단게 겐조</figcaption>
+          </figure>
         </div>
         <div class="go"><span class="badges"><span class="bd walk">도보</span></span>
-          <span>키샤미치 산책로 — 옛 철도 교량을 보행로로 리노베이션한 길 — 를 따라 신코지구까지 15분. 걷는 길 자체가 항만 재생의 전시장입니다.</span>
-        </div>
+          <span>키샤미치 산책로 — 옛 철도 교량을 보행로로 리노베이션한 길 — 를 따라 신코지구까지 15분. 걷는 길 자체가 항만 재생의 전시장입니다.</span></div>
 
         <div class="stop">
           <div class="stop-time">16:15 – 17:30</div>
-          <div class="stop-name"><a class="pl" href="https://www.cupnoodles-museum.jp/ja/yokohama/" target="_blank"
-              rel="noopener">컵누들 뮤지엄</a> — 전원 팩토리 체험</div>
-          <p class="stop-desc">인스턴트 라면이라는 일상 제품 하나가 브랜딩·아카이브·전시디자인의 사례가 되는 곳. 16:15 입관해 히스토리 큐브를 먼저 훑고, <b>16:30 회차 마이
-              컵누들 팩토리</b>(약 30–45분)에서 전원이 자기 컵을 디자인해 포장까지 — 방금 벽에서 본 3,000개 패키지 계보에 각자의 한 개를
-            보태보는 체험입니다. <b>예약 완료</b> — 16:30 회차 이용권부 입관권 10매. 당일 1층 키오스크에서 확인 코드(구매 확인 메일)로 발권 후 입장, 지정 시간 엄수. <a
-              class="wl" href="https://www.cupnoodles-museum.jp/ja/yokohama/" target="_blank"
-              rel="noopener">cupnoodles-museum.jp</a></p>
-          <figure class="fig"><img src="image/cupyoko.jpg" alt="컵누들 뮤지엄" loading="lazy"
-              onerror="this.closest('figure').style.display='none'">
+          <div class="stop-name"><a class="pl" href="https://www.cupnoodles-museum.jp/ja/yokohama/" target="_blank" rel="noopener">컵누들 뮤지엄</a> — 전원 팩토리 체험</div>
+          <p class="stop-desc">인스턴트 라면이라는 일상 제품 하나가 브랜딩·아카이브·전시디자인의 사례가 되는 곳. 16:15 입관해 히스토리 큐브를 먼저 훑고, <b>16:30 회차 마이 컵누들 팩토리</b>(약 30–45분)에서 전원이 자기 컵을 디자인해 포장까지 — 이 답사에서 유일하게 손을 쓰는 시간이자, 방금 벽에서 본 3,000개 패키지 계보에 각자의 한 개를 보태보는 체험입니다. <b>예약 완료</b> — 16:30 회차 이용권부 입관권 10매. 당일 1층 키오스크에서 확인 코드(구매 확인 메일)로 발권 후 입장, 지정 시간 엄수. <a class="wl" href="https://www.cupnoodles-museum.jp/ja/yokohama/" target="_blank" rel="noopener">cupnoodles-museum.jp</a></p>
+          <figure class="fig"><img src="image/cupyoko.jpg" alt="컵누들 뮤지엄" loading="lazy" onerror="this.closest('figure').style.display='none'">
             <figcaption>컵누들 뮤지엄 요코하마</figcaption>
           </figure>
           <div class="exh">
-            <p><span class="t">인스턴트 라면 히스토리 큐브</span> <span class="p">— 1958년 치킨라멘부터 약 3,000종의 패키지가 연대순으로 벽면을 채우는 방. 한
-                제품군의 패키지 디자인 변천을 한 벽에서 통람하는 그래픽 아카이브로, 서체·색·로고가 시대에 따라 움직여온 궤적이 물량으로 보입니다.</span></p>
-            <figure class="fig"><img src="image/cups.jpg" alt="인스턴트 라면 히스토리 큐브" loading="lazy"
-                onerror="this.closest('figure').style.display='none'">
+            <p><span class="t">인스턴트 라면 히스토리 큐브</span> <span class="p">— 1958년 치킨라멘부터 약 3,000종의 패키지가 연대순으로 벽면을 채우는 방. 한 제품군의 패키지 디자인 변천을 한 벽에서 통람하는 그래픽 아카이브로, 서체·색·로고가 시대에 따라 움직여온 궤적이 물량으로 보입니다.</span></p>
+            <figure class="fig"><img src="image/cups.jpg" alt="인스턴트 라면 히스토리 큐브" loading="lazy" onerror="this.closest('figure').style.display='none'">
               <figcaption>인스턴트 라면 히스토리 큐브</figcaption>
             </figure>
-            <p><span class="t">안도 모모후쿠 스토리 · 크리에이티브 싱킹</span> <span class="p">— 창업자의 발명 과정을 ‘거꾸로 생각한다’ 등 여섯 개의 사고 키워드로
-                재편집한 전시실들. 기업 창업사를 위인전이 아니라 추상화된 사고법의 체험 공간으로 번역한 전시 기획 자체가 관찰 대상이고, 치킨라멘을 개발한 연구 오두막의 실물 재현도
-                있습니다.</span></p>
-            <p><span class="t">사토 카시와의 토탈 디렉션</span> <span class="p">— 로고, 사이니지, 전시실의 여백, 동선 그래픽까지 한 사람의 아트 디렉션이 건물 전체를
-                관통합니다. 백색 공간에 빨간 로고 하나로 긴장을 만드는 방식은 현장에서 걸어봐야 체감되는 부분 — 오전에 본 파미마 파크(NIGO×원더월)와 같은 계열의 질문을 뮤지엄 스케일로 확장한
-                셈이라 비교해볼 것.</span></p>
-            <figure class="fig"><img src="image/sato.jpg" alt="사토 카시와 디렉션" loading="lazy"
-                onerror="this.closest('figure').style.display='none'">
+            <p><span class="t">안도 모모후쿠 스토리 · 크리에이티브 싱킹</span> <span class="p">— 창업자의 발명 과정을 ‘거꾸로 생각한다’ 등 여섯 개의 사고 키워드로 재편집한 전시실들. 기업 창업사를 위인전이 아니라 추상화된 사고법의 체험 공간으로 번역한 전시 기획 자체가 관찰 대상이고, 치킨라멘을 개발한 연구 오두막의 실물 재현도 있습니다.</span></p>
+            <p><span class="t">사토 카시와의 토탈 디렉션</span> <span class="p">— 로고, 사이니지, 전시실의 여백, 동선 그래픽까지 한 사람의 아트 디렉션이 건물 전체를 관통합니다. 백색 공간에 빨간 로고 하나로 긴장을 만드는 방식은 현장에서 걸어봐야 체감되는 부분 — 오전에 본 파미마 파크(NIGO×원더월)와 같은 계열의 질문을 뮤지엄 스케일로 확장한 셈이라 비교해볼 것.</span></p>
+            <figure class="fig"><img src="image/sato.jpg" alt="사토 카시와 디렉션" loading="lazy" onerror="this.closest('figure').style.display='none'">
               <figcaption>사토 카시와의 토탈 디렉션</figcaption>
             </figure>
           </div>
         </div>
         <div class="go"><span class="badges"><span class="bd walk">도보</span></span>
-          <span>아카렌가 창고(1911년 벽돌 세관 창고 리노베이션)의 외관과 앞마당을 지나, 개항 부두의 아트 파빌리온 조노하나 테라스를 경유해 차이나타운까지 약 25분. 아카렌가는 이따 오산바시에서
-            야경으로 한 번 더 보게 됩니다.</span>
-        </div>
-        <figure class="fig"><img src="image/aka.avif" alt="아카렌가 창고" loading="lazy"
-            onerror="this.closest('figure').style.display='none'">
+          <span>아카렌가 창고(1911년 벽돌 세관 창고 리노베이션)의 외관과 앞마당을 지나, 개항 부두의 아트 파빌리온 조노하나 테라스를 경유해 차이나타운까지 약 25분. 아카렌가는 이따 오산바시에서 야경으로 한 번 더 보게 됩니다.</span></div>
+        <figure class="fig"><img src="image/aka.avif" alt="아카렌가 창고" loading="lazy" onerror="this.closest('figure').style.display='none'">
           <figcaption>아카렌가 창고</figcaption>
         </figure>
-
+        <figure class="fig" style="margin:-8px 0 26px"><img src="image/aka.avif" alt="아카렌가 창고" loading="lazy" onerror="this.closest('figure').style.display='none'">
+          <figcaption>아카렌가 창고 — 외관·앞마당 통과</figcaption>
+        </figure>
 
         <div class="stop">
           <div class="stop-time">18:00</div>
           <div class="stop-name">저녁 — 요코하마 차이나타운</div>
-          <figure class="fig"><img src="image/yoko.webp" alt="요코하마 차이나타운" loading="lazy"
-              onerror="this.closest('figure').style.display='none'">
+          <figure class="fig"><img src="image/yoko.webp" alt="요코하마 차이나타운" loading="lazy" onerror="this.closest('figure').style.display='none'">
             <figcaption>요코하마 차이나타운</figcaption>
           </figure>
         </div>
         <div class="go"><span class="badges"><span class="bd walk">도보</span></span>
-          <span>식후 산책으로 오산바시까지 10분.</span>
-        </div>
+          <span>식후 산책으로 오산바시까지 10분.</span></div>
 
         <div class="stop">
           <div class="stop-time">19:15</div>
-          <div class="stop-name"><a class="pl" href="https://osanbashi.jp/" target="_blank" rel="noopener">오산바시
-              국제여객터미널</a> — 야경</div>
-          <p class="stop-desc">FOA(포린 오피스 아키텍츠) 설계, 2002. 지붕 전체가 물결치는 목재 데크 광장인 랜드스케이프 건축의 세계적 아이콘으로, 무료 개방입니다. 완전히 어두워진
-            시간이라 미나토미라이 스카이라인과 아카렌가의 야경이 절정입니다. <a class="wl" href="https://osanbashi.jp/" target="_blank"
-              rel="noopener">osanbashi.jp</a></p>
-          <figure class="fig"><img src="image/osanbashi.jpeg" loading="lazy"
-              onerror="this.closest('figure').style.display='none'">
-            <figcaption>오산바시</figcaption>
+          <div class="stop-name"><a class="pl" href="https://osanbashi.jp/" target="_blank" rel="noopener">오산바시 국제여객터미널</a> — 야경</div>
+          <p class="stop-desc">FOA(포린 오피스 아키텍츠) 설계, 2002. 지붕 전체가 물결치는 목재 데크 광장인 랜드스케이프 건축의 세계적 아이콘으로, 무료 개방입니다. 완전히 어두워진 시간이라 미나토미라이 스카이라인과 아카렌가의 야경이 절정 — 하루의 마침표입니다. <a class="wl" href="https://osanbashi.jp/" target="_blank" rel="noopener">osanbashi.jp</a></p>
+          <figure class="fig"><img src="image/osanbashi.jpg" alt="오산바시 목재 데크" loading="lazy" onerror="this.closest('figure').style.display='none'">
+            <figcaption>오산바시 — FOA의 목재 데크</figcaption>
           </figure>
-          <figure class="fig"><img src="image/yokohama.avif" loading="lazy"
-              onerror="this.closest('figure').style.display='none'">
-            <figcaption>오산바시에서 본 요코하마 야경</figcaption>
+          <figure class="fig"><img src="image/night.jpg" alt="오산바시에서 본 미나토미라이 야경" loading="lazy" onerror="this.closest('figure').style.display='none'">
+            <figcaption>오산바시에서 본 미나토미라이 야경</figcaption>
           </figure>
-
         </div>
         <div class="go tmove">
           <div class="stop-time">20:00</div>
@@ -1647,35 +1409,32 @@
     <section class="day" id="d3" style="--lc:var(--d3)">
       <div class="day-head">
         <span class="day-num" style="background:var(--d3)">Day 3</span>
-        <h2>10/1 목 — 타카나와, 그리고 트랙별 탐방</h2>
+        <h2>10/1 목 — 타카나와(또는 도쿄역), 그리고 트랙별 탐방</h2>
       </div>
       <p class="day-sub">
-        오전은 전원이 올해 3월 개관한 MoN Takanawa로 갑니다. 오후는 전공·관심사에 따라 네 갈래로 흩어졌다가 18:30 시부야 히카리에 d47 뮤지엄에서 합류해 함께 보고
-        식사합니다.
+        오전은 두 옵션 중 하나를 택합니다 — A는 올해 3월 개관한 MoN Takanawa, B는 도쿄역 KITTE 일대. 오후는 전공·관심사에 따라 네 갈래로 흩어졌다가, 저녁에 시부야 히카리에 d47
+        뮤지엄에서 다시 만나 함께 보고 식사합니다. 네즈미술관은 정원까지 제대로 보면 반나절이 걸리는 곳이라 독립 트랙으로 분리했습니다.
       </p>
-
 
       <div class="line">
         <div class="stop">
           <div class="stop-time">09:00</div>
           <div class="stop-name">호텔 로비 집합</div>
         </div>
-        <div class="go"><span class="badges"><span class="bd e">E</span><span class="bd a">A</span></span>
-          <span>롯폰기 → 오에도선 → 다이몬(같은 역 아사쿠사선 환승) → 센가쿠지 A4, 약 20분. 역에서 MoN(다카나와 게이트웨이)까지 도보 7분.</span>
+        <div class="go"><span class="badges"><span class="bd e">E</span><span class="bd a">A</span><span
+              class="bd h">H</span><span class="bd m">M</span></span>
+          <span>옵션 A: 롯폰기 → 오에도선 → 다이몬(같은 역 아사쿠사선 환승) → 센가쿠지 A4 도보 3분, 약 20분. 옵션 B: 롯폰기 → 히비야선 → 가스미가세키(마루노우치선 환승) →
+            도쿄역, 약 20분.</span>
         </div>
 
         <div class="stop">
           <div class="stop-time">10:00 – 13:00</div>
-          <div class="stop-name"><a class="pl" href="https://montakanawa.jp/" target="_blank" rel="noopener">MoN
-              Takanawa: The Museum of Narratives</a> (점심 포함)</div>
+          <div class="stop-name">오전 프로그램 — 옵션 택1 (점심 포함)</div>
+          <p class="track-label"><i></i>옵션 A. <a class="pl" href="https://montakanawa.jp/" target="_blank"
+              rel="noopener">MoN Takanawa: The Museum of Narratives</a></p>
           <p class="stop-desc">2026년 3월 개관. 구마 겐고가 외장을 맡은 나선형 저층 건물로, 내부는 4층까지 뚫린 아트리움을 나선 계단과 슬로프가 감아 올라가는 입체 회랑 구조 —
-            걷는 것 자체가 관람입니다. 방문일은 시즌 전시 교체기(다음 프로그램 10/10 시작)로 유료 전시가 없어, 관 자체 — 건축·브랜딩·무료 존 — 를 75분에 압축해 보고 남는 시간을
-            주변으로 돌립니다. <b>10:00–11:15</b> 나선 회랑 한 바퀴: 로비 사이니지 → 라이브러리 → 2층 숍 → 옥상 순서로 오르며 아래 항목들을 확인 ·
-            <b>11:15–11:45</b> 앞 공원에서 다카나와 축제 유적과 게이트웨이역 목조 지붕 · <b>11:45–12:45</b> 점심 — 1층 MoN Park Cafe by Spiral 등
-            관내에서(12시 전 진입이라 대기가 짧습니다) · <b>12:45</b> 센가쿠지역으로 도보 7분 이동, 여유가 있으면 역 바로 옆 센가쿠지(아코 47낭인 묘) 경내 15분 ·
-            <b>13:00</b> 출발. <a class="wl" href="https://montakanawa.jp/" target="_blank"
-              rel="noopener">montakanawa.jp</a>
-          </p>
+            걷는 것 자체가 관람입니다. 방문일은 시즌 전시 교체기(다음 프로그램 10/10 시작)라 무료 존 중심으로 봅니다. 11:00부터 자유탐방, 점심도 관내에서. <a class="wl"
+              href="https://montakanawa.jp/" target="_blank" rel="noopener">montakanawa.jp</a></p>
           <figure class="fig"><img src="image/mon.jpg" alt="MoN Takanawa" loading="lazy"
               onerror="this.closest('figure').style.display='none'">
             <figcaption>MoN Takanawa — 다카나와 게이트웨이역 직결</figcaption>
@@ -1698,163 +1457,89 @@
                 보이는 다카나와 축제(築堤) 유적 — 1872년 일본 최초의 철도가 바다 위를 달리도록 쌓은 해상 제방으로, 2019년 재개발 공사 중 발굴돼 일부가 현지 보존된 사적, 그리고 구마
                 겐고의 목재 격자 지붕이 덮인 다카나와 게이트웨이역 자체.</span></p>
           </div>
+          <p class="track-label" style="margin-top:26px"><i></i>옵션 B. 도쿄역 — KITTE 일대</p>
+          <p class="stop-desc">다쓰노 긴고의 1914년 마루노우치 역사 돔에서 시작해, 반경 도보 5분 안에서 전시 두 곳과 인터메디아테크를 돌고 KITTE에서 점심(11시 오픈)과 6층
+            옥상정원(역사 지붕 조망), 4층 구 우체국장실까지 보는 코스.</p>
+          <div class="exh">
+            <p><span class="t">도쿄 스테이션 갤러리 — 수호전(水滸傳)</span> <span class="p">(9.19–11.8, 10:00 개관) — 역사 벽돌 구조체 안의 갤러리.
+                우타가와 구니요시의 출세작 호걸 연작 현존 74매 일괄 공개. 소설→우키요에→가부키·놀이·의복→만화·게임으로 이어지는 800년의 트랜스미디어 수용사. 일시 지정제 아님. <a
+                  class="wl" href="https://www.ejrcf.or.jp/gallery/" target="_blank"
+                  rel="noopener">ejrcf.or.jp/gallery</a></span></p>
+            <p><span class="t">GOOD DESIGN Marunouchi — 산수향의 디자인 6</span> <span class="p">(~10.11, 무료, 11:00~) — 굿디자인상
+                거점의 기획전. 지방·산간 지역에 뿌리내린 디자인의 미래 — 저녁 d47의 47숙전과 같은 ‘로컬×디자인’ 계열이라 하루 안에 비교 관람이 됩니다. 나카도리 도보 5분. <a
+                  class="wl" href="https://marunouchi.g-mark.org/" target="_blank"
+                  rel="noopener">marunouchi.g-mark.org</a></span></p>
+            <p><span class="t">KITTE — 인터메디아테크</span> <span class="p">(11:00 개관, 무료) — 옛 도쿄중앙우체국을 리노베이션한 JP타워 2·3층. 도쿄대
+                학술표본을 박물관 그래픽과 집기 디자인으로 다시 짠 상설관 — 표본 진열장 하나하나가 전시디자인 레퍼런스. <a class="wl"
+                  href="https://www.intermediatheque.jp/" target="_blank" rel="noopener">intermediatheque.jp</a></span>
+            </p>
+            <figure class="fig">
+              <img src="image/kitte.jpg" alt="KITTE 아트리움" loading="lazy" onerror="this.remove()">
+              <img src="image/inter.jpg" alt="인터메디아테크" loading="lazy" onerror="this.remove()">
+              <figcaption>KITTE 아트리움과 인터메디아테크</figcaption>
+            </figure>
+          </div>
         </div>
         <div class="go tmove">
-          <div class="stop-time">13:00</div>
+          <div class="stop-time">13:30</div>
           <div class="go-row"><span class="badges"><span class="bd a">A</span><span class="bd e">E</span></span>
-            <span>트랙별 분산 출발. 센가쿠지 → 아사쿠사선 → 다이몬 환승까지는 전원 같은 경로이고, 다이몬의 오에도선 승강장에서 방향만 갈립니다 — 네즈·패션·건축가구 트랙은
-              아오야마잇초메 방면, ICC 트랙은 신주쿠 방면.</span>
+            <span>트랙별 분산 출발. 옵션 A(센가쿠지)에서는 아사쿠사선 → 다이몬 환승 후 오에도선 방향만 갈리고, 옵션 B(도쿄역)에서는 니주바시마에역 치요다선으로 오모테산도·노기자카 직통 약
+              15분(C트랙은 추오선 쾌속 → 신주쿠 → 게이오신선 하쓰다이) — 분산 교통은 B가 더 단순합니다.</span>
           </div>
         </div>
 
         <div class="stop">
-          <div class="stop-time">13:45 – 17:45</div>
+          <div class="stop-time">14:00 – 17:30</div>
           <div class="stop-name">오후 트랙 탐방 — 4갈래</div>
-          <p class="stop-desc">네 트랙 모두 시부야 히카리에 8층 d47 뮤지엄에서 다시 만납니다 — 18:30 기준, 18:15까지 도착.</p>
-          <div class="mapbox mini">
-            <svg viewBox="0 0 720 520" role="img" aria-label="10/1 오후 아오야마·하라주쿠·노기자카 도보 지도" font-family="inherit">
-              <g aria-hidden="true">
-                <rect x="40" y="60" width="92" height="128" rx="26" fill="#e5ecdf" />
-                <text x="52" y="130" font-size="9.5" fill="#a9b8a0">메이지신궁</text>
-                <rect x="655" y="280" width="55" height="46" rx="14" fill="#e5ecdf" />
-                <rect x="448" y="390" width="34" height="26" rx="10" fill="#e5ecdf" />
-                <polyline points="131,481 340,313 557,138 620,88" fill="none" stroke="#e6e6de" stroke-width="9" />
-                <text x="392" y="288" font-size="9.5" fill="#b3b3aa" transform="rotate(-39 392 288)">아오야마도리</text>
-                <polyline points="160,205 340,313 382,338" fill="none" stroke="#e6e6de" stroke-width="9" />
-                <text x="226" y="232" font-size="9.5" fill="#b3b3aa" transform="rotate(31 226 232)">오모테산도</text>
-                <polyline points="238,60 201,236 150,430 142,470" fill="none" stroke="#e6e6de" stroke-width="9" />
-                <polyline points="172,40 152,197 125,350 131,481 158,520" fill="none" stroke="#d4d4cb" stroke-width="3"
-                  opacity=".9" />
-                <text x="112" y="300" font-size="9.5" fill="#b3b3aa" transform="rotate(78 112 300)">JR 야마노테선</text>
-                <polyline points="120,160 201,236 340,313 606,276 682,244" fill="none" stroke="#d4d4cb" stroke-width="2"
-                  stroke-dasharray="4 4" opacity=".7" />
-                <text x="452" y="292" font-size="9.5" fill="#b3b3aa" transform="rotate(-8 452 292)">치요다선</text>
-                <circle cx="340" cy="313" r="4.5" fill="#9a9a92" />
-                <text x="350" y="308" font-size="10.5" fill="var(--muted)">오모테산도역</text>
-                <circle cx="152" cy="197" r="4.5" fill="#9a9a92" />
-                <text x="142" y="192" font-size="10.5" fill="var(--muted)" text-anchor="end">하라주쿠역</text>
-                <circle cx="557" cy="138" r="4.5" fill="#9a9a92" />
-                <text x="546" y="130" font-size="10.5" fill="var(--muted)" text-anchor="end">아오야마잇초메역 — D 하차</text>
-                <circle cx="131" cy="481" r="4.5" fill="#9a9a92" />
-                <text x="120" y="499" font-size="10.5" fill="var(--muted)" text-anchor="end">시부야역</text>
-                <text x="330" y="28" font-size="10.5" fill="var(--muted)">▲ MoN 타카나와에서 13:00 오에도선으로 (다이몬 환승)</text>
-                <text x="30" y="28" font-size="10.5" fill="var(--muted)">◀ C. ICC 하쓰다이 — 관람 후 JR로 하라주쿠 복귀</text>
-              </g>
-
-              <!-- 트랙 동선: 실선 도보 · 점선 전철 -->
-              <polyline points="152,197 224,120" fill="none" stroke="var(--d3)" stroke-width="2" stroke-dasharray="5 5"
-                opacity=".28" />
-              <polyline points="340,313 439,383" fill="none" stroke="var(--d3)" stroke-width="2.5" opacity=".3" />
-              <polyline points="340,313 416,355" fill="none" stroke="var(--d3)" stroke-width="2.5" opacity=".3" />
-              <polyline points="340,313 240,180 224,120" fill="none" stroke="var(--d3)" stroke-width="2.5"
-                opacity=".3" />
-              <polyline points="224,120 218,348 264,416 169,455" fill="none" stroke="var(--d3)" stroke-width="3"
-                opacity=".35" />
-              <polyline points="264,416 80,385 169,455" fill="none" stroke="var(--d3)" stroke-width="2" opacity=".25" />
-              <polyline points="557,138 606,276 690,302 522,453" fill="none" stroke="var(--d3)" stroke-width="2.5"
-                opacity=".3" />
-              <polyline points="522,453 340,313" fill="none" stroke="var(--d3)" stroke-width="2" stroke-dasharray="5 5"
-                opacity=".22" />
-              <polyline points="340,313 169,455" fill="none" stroke="var(--d3)" stroke-width="2" stroke-dasharray="5 5"
-                opacity=".22" />
-
-              <!-- 앵커 -->
-              <circle cx="439" cy="383" r="7" fill="var(--d3)" />
-              <text x="451" y="387" font-size="11" fill="var(--ink)">A. 네즈미술관 14:00</text>
-              <circle cx="416" cy="355" r="7" fill="var(--d3)" />
-              <text x="426" y="345" font-size="11" fill="var(--ink)">B. 요지 · 브랜드 건축 거리</text>
-              <circle cx="80" cy="385" r="5.5" fill="var(--d3)" />
-              <text x="42" y="370" font-size="10.5" fill="var(--muted)">B. 아카이브 스토어 (15시~)</text>
-              <circle cx="606" cy="276" r="7" fill="var(--d3)" />
-              <text x="597" y="262" font-size="11" fill="var(--ink)" text-anchor="end">D. 갤러리·마 · Bookshop TOTO</text>
-              <circle cx="690" cy="302" r="5.5" fill="var(--d3)" />
-              <text x="700" y="322" font-size="11" fill="var(--ink)" text-anchor="end">HIDA (미드타운)</text>
-              <circle cx="522" cy="453" r="7" fill="var(--d3)" />
-              <text x="534" y="457" font-size="11" fill="var(--ink)">D. 카리모쿠 리서치 센터 · 커먼즈</text>
-
-              <!-- 공통 서점 1→2→3 -->
-              <circle cx="224" cy="120" r="10" fill="var(--d3)" /><text x="224" y="124" font-size="11" font-weight="800"
-                fill="#fff" text-anchor="middle">1</text>
-              <text x="240" y="124" font-size="11" fill="var(--ink)">파피에 라보</text>
-              <circle cx="218" cy="348" r="10" fill="var(--d3)" /><text x="218" y="352" font-size="11" font-weight="800"
-                fill="#fff" text-anchor="middle">2</text>
-              <text x="203" y="352" font-size="11" fill="var(--ink)" text-anchor="end">Utrecht</text>
-              <circle cx="264" cy="416" r="10" fill="var(--d3)" /><text x="264" y="420" font-size="11" font-weight="800"
-                fill="#fff" text-anchor="middle">3</text>
-              <text x="280" y="420" font-size="11" fill="var(--ink)">아오야마 북 센터</text>
-
-              <!-- 합류 -->
-              <circle cx="169" cy="455" r="8" fill="var(--d3)" />
-              <text x="184" y="459" font-size="11" font-weight="700" fill="var(--ink)">d47 뮤지엄 (히카리에) — 18:30 전원
-                합류</text>
-            </svg>
-          </div>
-          <div class="flowmap-wrap">
-            <div class="flowmap">
-              <div class="fm-col">
-                <div class="fm-t">A. 네즈미술관 <small>미술관·정원</small></div>
-                <div class="fm-c">네즈미술관 <b>14:00 슬롯</b><br>전시 + 정원 (~16:00)</div>
-              </div>
-              <div class="fm-col">
-                <div class="fm-t">B. 패션 스윕 <small>아오야마→하라주쿠</small></div>
-                <div class="fm-c">요지 야마모토<br><span style="color:var(--muted)">+ 브랜드 건축 거리</span></div>
-                <div class="fm-c">아카이브 스토어</div>
-              </div>
-              <div class="fm-col">
-                <div class="fm-t">C. NTT ICC <small>미디어아트</small></div>
-                <div class="fm-c">ICC (하쓰다이)<br>14:00 – 15:00 <span style="color:var(--muted)">· 전시 약 1시간</span></div>
-              </div>
-              <div class="fm-col span2">
-                <div class="fm-t">D. 건축·가구 <small>노기자카→니시아자부</small></div>
-                <div class="fm-c">갤러리·마<br><span style="color:var(--muted)">+ Bookshop TOTO</span></div>
-                <div class="fm-c">HIDA (미드타운)</div>
-                <div class="fm-c">카리모쿠 리서치 센터<br><span style="color:var(--muted)">+ 카리모쿠 커먼즈</span></div>
-              </div>
-              <div class="fm-band">16시 전후 · A·B·C 합류 — 서점 세 곳
-                <small>파피에 라보 → Utrecht → 아오야마 북 센터 — 북→남 일직선으로 돌고 시부야까지 도보</small>
-              </div>
-            </div>
-          </div>
+          <p class="stop-desc">시부야 히카리에 8층 d47 뮤지엄(18:30 기준)에서 다시 만나는 것으로 잡고, 각 트랙에서 역산해 움직입니다.</p>
           <div class="track-grid" style="margin-top:14px">
             <div class="track">
               <h4>A. 네즈미술관 — 미술관·정원</h4>
+              <div class="who">한 곳을 느긋하게 보는 트랙</div>
               <ul>
                 <li><a class="pl" href="https://www.nezu-muse.or.jp/" target="_blank" rel="noopener">네즈미술관</a> <span>—
-                    구마 겐고 설계. 대나무 진입로, 낮은 조도의 전시실, 도심에 숨겨진 정원까지. <b>온라인 날짜·시간 지정
-                      예약제</b>(14:00 슬롯, 변경·취소 불가, 입관 후엔 시간 제한 없음)</span> <a class="wl"
-                    href="https://www.nezu-muse.or.jp/" target="_blank" rel="noopener">nezu-muse.or.jp</a>
+                    구마 겐고 설계. 대나무 진입로, 낮은 조도의 전시실, 도심에 숨겨진 정원까지. 제대로 보면 2–3시간이 걸려 독립 트랙으로 분리. <b>온라인 날짜·시간 지정
+                      예약제</b>(14:00–15:00 슬롯 권장, 변경·취소 불가, 입관 후엔 시간 제한 없음). 학생 요금(대학생 700엔~)은 학생증 필수</span> <a
+                    class="wl" href="https://www.nezu-muse.or.jp/" target="_blank" rel="noopener">nezu-muse.or.jp</a>
                 </li>
               </ul>
               <figure class="fig" style="margin:10px 0 2px"><img src="image/nezu.png" alt="네즈미술관 진입로" loading="lazy"
                   onerror="this.closest('figure').style.display='none'"></figure>
               <div class="route"><span class="badges"><span class="bd e">E</span><span class="bd g">G</span></span>
-                <span>다이몬 → 오에도선 → 아오야마잇초메 → 긴자선 → 오모테산도 도보 8분, 약 40분. 전시·정원 2시간 뒤 16:00 전후 나와 오모테산도 거리를 따라
-                  파피에 라보까지 도보 약 20분 — 공통 서점 구간을 북→남으로 돌아 시부야까지 걸어갑니다</span>
+                <span>다이몬 → 오에도선 → 아오야마잇초메 → 긴자선 → 오모테산도 도보 8분, 약 40분. 시부야 집합은 긴자선 1정거장</span>
               </div>
             </div>
             <div class="track">
-              <h4>B. 패션 — 아오야마→하라주쿠 스윕</h4>
+              <h4>B. 아오야마 — 패션·서점·인쇄</h4>
+
               <ul>
                 <li><a class="pl" href="https://www.yohjiyamamoto.co.jp/" target="_blank" rel="noopener">요지 야마모토
-                    아오야마</a> <span>— 브랜드 세계관이 매장 건축까지 관통하는 예. 미나미아오야마 일대는 프라다(헤르초크 &amp; 드 뫼롱)·꼼데가르송 등 브랜드 건축이
-                    밀집한 거리라, 정해진 시각 없이 걸으며 관심 매장을 골라 들어갑니다</span> <a class="wl" href="https://www.yohjiyamamoto.co.jp/"
-                    target="_blank" rel="noopener">yohjiyamamoto.co.jp</a></li>
+                    아오야마</a> <span>— 브랜드 세계관이 매장 건축까지 관통하는 예</span> <a class="wl"
+                    href="https://www.yohjiyamamoto.co.jp/" target="_blank" rel="noopener">yohjiyamamoto.co.jp</a></li>
+                <li><a class="pl" href="https://aoyamabc.jp/" target="_blank" rel="noopener">아오야마 북 센터</a> / <a
+                    class="pl" href="https://utrecht.jp/" target="_blank" rel="noopener">Utrecht</a> <span>—
+                    디자인서·독립출판</span> <a class="wl" href="https://aoyamabc.jp/" target="_blank"
+                    rel="noopener">aoyamabc.jp</a> <a class="wl" href="https://utrecht.jp/" target="_blank"
+                    rel="noopener">utrecht.jp</a></li>
                 <li><a class="pl" href="https://archivestore.jp/" target="_blank" rel="noopener">아카이브 스토어</a>
-                  <span>— 요지·마르지엘라 등 디자이너 아카이브를 박물관식으로 진열하는 빈티지 숍. 위치는 아오야마가 아니라 시부야 진난(와코 빌딩 지하 1층, 15시
-                    오픈) — 서점과의 앞뒤 순서는 지도를 보고 자유롭게 정하면 됩니다</span> <a class="wl" href="https://archivestore.jp/"
-                    target="_blank" rel="noopener">archivestore.jp</a>
+                  <span>— 빈티지 의류 아카이브</span> <a class="wl" href="https://archivestore.jp/" target="_blank"
+                    rel="noopener">archivestore.jp</a>
                 </li>
+                <li> <a class="pl" href="https://papierlabo.com/" target="_blank" rel="noopener">파피에 라보</a> <span>—
+                    활판인쇄·종이 전문(진구마에 1초메, 하라주쿠역 북쪽. ~19시, 월·화 휴무)</span> <a class="wl" href="https://papierlabo.com/"
+                    target="_blank" rel="noopener">papierlabo.com</a></li>
               </ul>
               <figure class="fig" style="margin:10px 0 2px"><img src="image/archive.png" alt="아카이브 스토어" loading="lazy"
                   onerror="this.closest('figure').style.display='none'"></figure>
               <div class="route"><span class="badges"><span class="bd e">E</span><span class="bd g">G</span><span
                     class="bd jr">JR</span></span>
-                <span>A트랙과 같은 경로로 오모테산도까지. 요지·브랜드 거리(동) → 공통 서점 구간(북→남) → 마지막 아카이브 스토어(진난) → 도보 10분 히카리에
-                  순서면 전 구간이 한 방향으로 흐릅니다</span>
+                <span>A트랙과 같은 경로로 오모테산도까지, 이후 도보 순회(동→서→북 스윕이라 되돌아가는 구간 없음). 시부야 집합은 파피에 라보 → 도보 8분 하라주쿠 → JR 1정거장, 약
+                  15분</span>
               </div>
             </div>
             <div class="track">
-              <h4>C. NTT ICC (하쓰다이) — 미디어아트</h4>
+              <h4>C. 하쓰다이 — 미디어아트</h4>
+              <div class="who">미디어아트 중심 트랙</div>
               <ul>
                 <li><a class="pl" href="https://www.ntticc.or.jp/" target="_blank" rel="noopener">NTT ICC</a> <span>—
                     1997년부터 이어진 미디어아트 전문 기관. 무료 존 포함, 18:00까지. 기술 기반 작품의 보존·전시 방식을 볼 수 있는 드문 곳</span> <a class="wl"
@@ -1863,55 +1548,30 @@
               <figure class="fig" style="margin:10px 0 2px"><img src="image/icc.png" alt="NTT ICC 전시" loading="lazy"
                   onerror="this.closest('figure').style.display='none'"></figure>
               <div class="route"><span class="badges"><span class="bd e">E</span><span class="bd jr">JR</span></span>
-                <span>다이몬 → 오에도선 신주쿠 직통 → 게이오신선 1정거장 하쓰다이, 약 45분. 전시는 1시간 정도라 15시 전후 출발 — 신주쿠 → JR 하라주쿠 약
-                  25분, 파피에 라보부터 북→남 순서로 공통 서점 구간에 합류합니다</span>
+                <span>다이몬 → 오에도선 신주쿠 직통 → 게이오신선 1정거장 하쓰다이, 약 45분. 시부야 집합은 신주쿠 → JR 약 25분 — 이 트랙은 ICC에 집중</span>
               </div>
             </div>
             <div class="track">
-              <h4>D. 건축·가구 — 노기자카→미드타운→니시아자부</h4>
+              <h4>D. 노기자카 — 건축·가구</h4>
+              <div class="who">갤러리와 쇼룸 중심</div>
               <ul>
                 <li><a class="pl" href="https://jp.toto.com/gallerma/" target="_blank" rel="noopener">갤러리·마</a> <span>—
-                    TOTO가 운영하는 건축 전문 갤러리(노기자카역 1분 · 무료 · ~18시). 전시 회기 중(9/17–11/29)이고, 병설 Bookshop TOTO는 건축 전문
-                    서점 — 이 트랙의 서점 시간이기도 합니다</span> <a class="wl" href="https://jp.toto.com/gallerma/" target="_blank"
-                    rel="noopener">jp.toto.com/gallerma</a></li>
-                <li><a class="pl" href="https://hidasangyo.com/" target="_blank" rel="noopener">HIDA 도쿄 미드타운점</a>
-                  <span>— 히다 지역 목공 가구 (갤러리·마에서 도보 8분)</span> <a class="wl" href="https://hidasangyo.com/"
-                    target="_blank" rel="noopener">hidasangyo.com</a>
+                    TOTO가 운영하는 건축 전문 갤러리. 건축 서점 병설</span> <a class="wl" href="https://jp.toto.com/gallerma/"
+                    target="_blank" rel="noopener">jp.toto.com/gallerma</a></li>
+                <li><a class="pl" href="https://www.karimoku.com/" target="_blank" rel="noopener">카리모쿠 리서치 센터</a>
+                  <span>— 목가구 브랜드의 리서치 전용 공간</span> <a class="wl" href="https://www.karimoku.com/" target="_blank"
+                    rel="noopener">karimoku.com</a>
                 </li>
-                <li><a class="pl" href="https://www.karimoku-research.com/" target="_blank" rel="noopener">카리모쿠 리서치
-                    센터</a> <span>— 제품화 전 프로토타입과 가공·컬러 견본을 직접 만질 수 있는 리서치 거점(니시아자부, 12–18시). 도보 1분의 카리모쿠 커먼즈 도쿄까지
-                    함께</span> <a class="wl" href="https://www.karimoku-research.com/" target="_blank"
-                    rel="noopener">karimoku-research.com</a>
+                <li><a class="pl" href="https://hidasangyo.com/" target="_blank" rel="noopener">HIDA 도쿄 미드타운점</a>
+                  <span>— 히다 지역 목공 가구</span> <a class="wl" href="https://hidasangyo.com/" target="_blank"
+                    rel="noopener">hidasangyo.com</a>
                 </li>
               </ul>
               <figure class="fig" style="margin:10px 0 2px"><img src="image/ma.jpg" alt="갤러리·마" loading="lazy"
                   onerror="this.closest('figure').style.display='none'"></figure>
-              <div class="route"><span class="badges"><span class="bd e">E</span><span class="bd g">G</span></span>
-                <span>다이몬 → 오에도선 → 아오야마잇초메 4번 출구 → 도보 7분 갤러리·마. 시부야 집합은 카리모쿠 → 도보 10분 오모테산도 → 긴자선 1정거장, 약
-                  20분</span>
+              <div class="route"><span class="badges"><span class="bd e">E</span><span class="bd c">C</span></span>
+                <span>다이몬 → 오에도선 → 아오야마잇초메 → 도보 10분(또는 치요다선 노기자카). 시부야 집합은 노기자카 → 치요다선 → 오모테산도 → 긴자선 1정거장, 약 20분</span>
               </div>
-            </div>
-          </div>
-          <div class="track" style="margin-top:12px">
-            <h4>16시 전후 — A·B·C 합류: 서점 세 곳</h4>
-            <div class="who">네즈·패션·ICC 세 트랙이 하라주쿠 쪽에서 만나 북→남 일직선으로 순회</div>
-            <ul>
-              <li> <a class="pl" href="https://papierlabo.com/" target="_blank" rel="noopener">파피에 라보</a> <span>—
-                  활판인쇄·종이 전문(진구마에 1초메, 하라주쿠역 북쪽. ~19시, 월·화 휴무)</span> <a class="wl" href="https://papierlabo.com/"
-                  target="_blank" rel="noopener">papierlabo.com</a></li>
-              <li><a class="pl" href="https://utrecht.jp/" target="_blank" rel="noopener">Utrecht</a> <span>—
-                  독립출판·아트북, 도쿄아트북페어를 공동 주최해 온 서점(진구마에 5초메, 12–19시 · 월 휴무). 파피에에서 도보 약 15분</span> <a class="wl"
-                  href="https://utrecht.jp/" target="_blank" rel="noopener">utrecht.jp</a>
-              </li>
-              <li><a class="pl" href="https://aoyamabc.jp/" target="_blank" rel="noopener">아오야마 북 센터 본점</a>
-                <span>— 디자인·건축·사진서가 강한 대형 서점(아오야마도리 UN대학 옆, ~21시). 성격은 긴자식스 츠타야와 가까운 계열. Utrecht에서 도보 3분,
-                  시부야까지 도보 13분 — 순회의 마지막이자 집합 동선의 시작점입니다</span> <a class="wl" href="https://aoyamabc.jp/"
-                  target="_blank" rel="noopener">aoyamabc.jp</a>
-              </li>
-            </ul>
-            <div class="route"><span class="badges"><span class="bd g">G</span><span class="bd jr">JR</span></span>
-              <span>전원 북→남 일직선 — 파피에 라보 → 도보 15분 Utrecht → 도보 3분 아오야마 북 센터 → 도보 13분 시부야. 되돌아가는 구간 없이 걸어서
-                집합 지점까지 내려갑니다. 18:15까지 히카리에 8층으로</span>
             </div>
           </div>
         </div>
@@ -1920,7 +1580,7 @@
           <div class="stop-time">18:30</div>
           <div class="stop-name">시부야 히카리에 <a class="pl" href="https://www.hikarie8.com/d47museum/" target="_blank"
               rel="noopener">d47 뮤지엄</a></div>
-          <p class="stop-desc">D&amp;DEPARTMENT가 47개 도도부현의 디자인을 수집·전시하는 곳으로, ‘로컬 리서치를 전시로 만드는 법’의
+          <p class="stop-desc">흩어졌던 하루를 여기서 다시 묶습니다. D&amp;DEPARTMENT가 47개 도도부현의 디자인을 수집·전시하는 곳으로, ‘로컬 리서치를 전시로 만드는 법’의
             교과서. 전시실 하나 규모라 30분이면 충분하고, 일찍 도착한 팀은 18:00부터 먼저 관람해도 됩니다. 같은 8층의 전망 공간에서 <b>시부야 스크램블 교차로가 내려다보입니다</b> — 저녁
             시간대라 교차로의 인파와 대형 스크린들이 가장 잘 보이는 때이기도 합니다. <a class="wl" href="https://www.hikarie8.com/d47museum/"
               target="_blank" rel="noopener">hikarie8.com/d47museum</a></p>
@@ -1960,7 +1620,8 @@
         <h2>10/2 금 — 롯폰기, 교바시, 귀국</h2>
       </div>
       <p class="day-sub">
-        마지막 날은 디자인 뮤지엄의 정석 코스. 아티존의 소트사스전은 10/4 종료라 이 일정이 마지막 기회입니다. 관람 후 16:00에 공항으로 출발합니다.
+        마지막 날은 디자인 뮤지엄의 정석 코스. 아티존의 소트사스전은 10/4 종료라 이 일정이 마지막 기회입니다. 관람 후에는 서두르지 않고 16:00에 공항으로 출발 — 출국일의 완충을 넉넉하게
+        잡았습니다.
       </p>
 
       <div class="line">
@@ -2072,9 +1733,7 @@
       <h3>공통 메모</h3>
       <ul>
         <li><b>교통카드</b> <span>— 첫날 하네다에서 Suica/PASMO(모바일 가능) 준비. 이 일정의 모든 대중교통을 카드 하나로 탑니다.</span></li>
-        <li><b>예약이 필요한 곳</b> <span>— teamLab Borderless(예약 완료), 컵누들 뮤지엄 팩토리 16:30 회차(10매 예약 완료 — 당일 키오스크 발권), 아티존
-            소트사스전(예매 완료), 네즈미술관(온라인 날짜·시간 지정, 네즈 트랙 인원 확정 후 14:00 슬롯 구매), 텐도목코 쇼룸(견학 예약제). 네즈는 구매 후 변경·취소가 안 되며, 모리
-            유코전은 무료라 예약이 필요 없습니다.</span></li>
+        <li><b>예약이 필요한 곳</b> <span>— teamLab Borderless(예약 완료), 컵누들 뮤지엄 팩토리 16:30 회차(10매 예약 완료 — 당일 키오스크 발권), 아티존 소트사스전(예매 완료), 네즈미술관(온라인 날짜·시간 지정, A트랙 인원 확정 후 14:00–15:00 슬롯 구매)만 남았습니다. 네즈는 구매 후 변경·취소가 안 되며, 모리 유코전과 텐도목코 쇼룸(자유 관람, 안내 견학만 예약제)은 예약이 필요 없습니다.</span></li>
         <li><b>마감이 빠른 곳</b> <span>— 폴라 뮤지엄 아넥스 입장 18:30, 텐도목코 17:00, ICC 18:00. 오후 동선은 이 시간부터 역산.</span></li>
         <li><b>휴관 확인</b> <span>— 요코하마미술관은 목요일 휴관(9/30 수 정상), 텐도목코는 수요일 휴무라 화요일(9/29) 개인 방문으로 배치. 소트사스전은 10/4
             종료.</span></li>
