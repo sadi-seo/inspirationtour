@@ -327,6 +327,20 @@
       margin-bottom: 0
     }
 
+    /* ---------- side-by-side figures ---------- */
+    .fig2 {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 10px;
+      margin: 8px 0 6px
+    }
+
+    @media (max-width: 620px) {
+      .fig2 {
+        grid-template-columns: 1fr
+      }
+    }
+
     .exh .t {
       font-weight: 700
     }
@@ -1661,7 +1675,7 @@
           <div class="stop-name">호텔 로비 집합</div>
         </div>
         <div class="go"><span class="badges"><span class="bd e">E</span><span class="bd a">A</span></span>
-          <span>롯폰기 → 오에도선 → 다이몬(같은 역 아사쿠사선 환승) → 센가쿠지 A4, 약 20분. 역에서 MoN(다카나와 게이트웨이)까지 도보 7분.</span>
+          <span>롯폰기 → 오에도선 → 다이몬(같은 역 아사쿠사선 환승) → 센가쿠지 A4, 약 20분. 역에서 MoN(다카나와 게이트웨이)까지 도보 3분.</span>
         </div>
 
         <div class="stop">
@@ -1671,8 +1685,9 @@
           <p class="stop-desc">2026년 3월 개관. 구마 겐고가 외장을 맡은 나선형 저층 건물로, 내부는 4층까지 뚫린 아트리움을 나선 계단과 슬로프가 감아 올라가는 입체 회랑 구조 —
             걷는 것 자체가 관람입니다. 방문일은 시즌 전시 교체기(다음 프로그램 10/10 시작)로 유료 전시가 없어, 관 자체 — 건축·브랜딩·무료 존 — 를 75분에 압축해 보고 남는 시간을
             주변으로 돌립니다. <b>10:00–11:15</b> 나선 회랑 한 바퀴: 로비 사이니지 → 라이브러리 → 2층 숍 → 옥상 순서로 오르며 아래 항목들을 확인 ·
-            <b>11:15–11:45</b> 앞 공원에서 다카나와 축제 유적과 게이트웨이역 목조 지붕 · <b>11:45–12:45</b> 점심 — 1층 MoN Park Cafe by Spiral 등
-            관내에서(12시 전 진입이라 대기가 짧습니다) · <b>12:45</b> 센가쿠지역으로 도보 7분 이동, 여유가 있으면 역 바로 옆 센가쿠지(아코 47낭인 묘) 경내 15분 ·
+            <b>11:15–11:45</b> 앞 공원에서 다카나와 축제 유적과 게이트웨이역 목조 지붕 · <b>11:45–12:45</b> 점심 — 3층 MoN Kitchen by Spiral(타파스·파스타·플레이트, 78석.
+            시간 여유가 있다면 옆 뉴우먼 다카나와로 가는 것도 가능, 도보 6~8분) ·
+            <b>12:45</b> 센가쿠지역으로 도보 3분 이동, 여유가 있으면 역 바로 옆 센가쿠지(아코 47낭인 묘) 경내 15분 ·
             <b>13:00</b> 출발. <a class="wl" href="https://montakanawa.jp/" target="_blank"
               rel="noopener">montakanawa.jp</a>
           </p>
@@ -1685,8 +1700,23 @@
                 아트·잡화 셀렉트숍. 한쪽에 펜타그램이 디자인한 MoN 오리지널 굿즈 코너(토트백·클리어파일·통행수형 키홀더 등)가 있어, 뮤지엄 굿즈가 브랜딩의 연장이 되는 사례를 볼 수 있습니다.
                 <a class="wl" href="https://montakanawa.jp/facilities/shop/" target="_blank"
                   rel="noopener">montakanawa.jp/facilities/shop</a></span></p>
-            <p><span class="t">펜타그램의 브랜딩·사이니지</span> <span class="p">— 로비의 사인과 플로어가이드부터 입체 조형까지 펜타그램이 관 전체의 크리에이티브를 담당.
-                건축(구마 겐고)–브랜딩(펜타그램)–운영(스파이럴)이 ‘나선’이라는 하나의 개념으로 관통되는 구조를 현장에서 확인할 것.</span></p>
+            <p><span class="t">펜타그램의 아이덴티티·사이니지</span> <span class="p">— 런던 펜타그램(파트너 루크 파월 팀)이 네이밍부터 버벌·비주얼 시스템,
+                로비의 사인과 플로어가이드, 입체 조형까지 관 전체의 크리에이티브를 담당. MoN은 Museum of Narratives의 약자이면서 일본어 門(문) — 다카나와가
+                에도의 관문이었다는 땅의 내력을 이름에 접은 이중 의미입니다. 심벌은 한 획의 나선이 M·O·N 세 글자로 읽히는 구조로, 구마 겐고의 나선형 외관·미술관의 순환
+                큐레이션 방침과 같은 형태를 공유합니다 — 펜타그램은 이를 ‘차원적 시간(dimensional time)’으로 설명합니다: 문화는 선형으로 흐르지 않고 회귀하고
+                재해석되며 순환한다는 것. 3색은 태양(빨강)·땅(초록)·바다(파랑)로, 매립지라는 부지의 기억이 팔레트의 근거. 수평 바(bar)는 ‘감기기 전의 내러티브
+                실’로서 나선이 개념을, 바가 레이아웃을 맡는 역할 분담이고, 타이포그래피는 일본어·영어 완전 병기·동등 위계입니다. 건축(구마 겐고)–브랜딩(펜타그램)–운영(스파이럴)이
+                ‘나선’이라는 하나의 개념으로 관통되는 구조를 현장에서 확인할 것.</span></p>
+            <div class="fig2">
+              <figure class="fig"><img src="image/mon-identity-spiral.png" alt="MoN 나선 심벌" loading="lazy"
+                  onerror="this.closest('figure').style.display='none'">
+                <figcaption>나선 심벌 — 한 획이 M·O·N 세 글자로 읽힌다</figcaption>
+              </figure>
+              <figure class="fig"><img src="image/mon-identity-lockup.png" alt="MoN 로고타입 록업" loading="lazy"
+                  onerror="this.closest('figure').style.display='none'">
+                <figcaption>로고타입 록업 — 3색 바(bar)가 텍스트를 잡는다</figcaption>
+              </figure>
+            </div>
             <p><span class="t">미래문화의 문</span> <span class="p">— 로비 상설. 각 분야 32인이 고른 ‘100년 뒤에 잇고 싶은 문화’를 전시하는 설치.</span>
             </p>
             <p><span class="t">MoN 라이브러리</span> <span class="p">— 지하 1~3층을 관통하는 벽면 책장. 진행 중인 프로그램·아티스트 관련 서적과 굿즈가 꽂히고,
